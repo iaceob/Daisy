@@ -1,0 +1,19 @@
+.page-header {
+  padding: 16px 12px;
+}
+.page-header-titlepic {
+  margin-right: 12px;
+  height: 32px;
+  vertical-align: middle;
+}
+.page-header-title {
+  margin: 0;
+  height: 32px;
+  line-height: 32px;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+* + .page-header-title {
+  margin-left: 12px;
+}
