@@ -1,14 +1,23 @@
+@charset 'UTF-8';
+
+*,*:after,*:before {
+  margin:0;
+  padding:0;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
 body {
-  font-family: "Segoe WP", "Segoe UI Light", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+  font-family: 'Segoe WP', 'Segoe UI Light', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif', 'Microsoft YaHei';
   font-size: 14px;
   color: #333;
   background-color: #fff;
   line-height: 1;
-  padding: 0;
-  margin: 0;
 }
-* {
-  box-sizing: border-box;
+img {
+  width:100%;
+  height:auto;
 }
 .pull-left {
   float: left;
@@ -19,6 +28,13 @@ body {
 .circle {
   border-radius: 100%;
 }
+/*
+ * TODO: 建议优化 class 名称并且当前样式不建议使用 按照 CSS 书写规范书写
+ */
 .display_block {
   display: block !important;
 }
+.display-block {
+  display: block !important;
+}
+

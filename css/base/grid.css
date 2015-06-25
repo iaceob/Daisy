@@ -41,3 +41,127 @@
 .column-10 {
   width: 100%;
 }
+
+
+
+
+/*
+ * from siiimple http://siiiimple.eu.pn/
+ * https://github.com/marcelowa/Siiiimple
+ */
+.span {
+  width: 100%;
+  min-width: 260px;
+  max-width: 1030px;
+  margin:0 auto;
+}
+.span:after {
+  content: '';
+  display: table;
+  clear: both
+}
+[class*='loop'] {
+  float: left;
+  padding: 10px;
+}
+.loop-1 {
+  width: 9.1%;
+}
+
+.loop-2 {
+  width: 16.6%;
+}
+
+.loop-3 {
+  width: 25%;
+}
+
+.loop-4 {
+  width: 33.3%;
+}
+
+.loop-5 {
+  width: 41.6%;
+}
+
+.loop-6 {
+  width: 50%;
+}
+
+.loop-7 {
+  width: 58.3%;
+}
+
+.loop-8 {
+  width: 66.6%;
+}
+
+.loop-9 {
+  width: 75%;
+}
+
+.loop-10 {
+  width: 83.3%;
+}
+
+.loop-11 {
+  width: 90.9%;
+}
+
+.loop-12,.loop_1 {
+  width: 100%;
+}
+
+.loop_2 {
+  width: 50%;
+}
+
+.loop_3 {
+  width: 33.3%;
+}
+
+.loop_4 {
+  width: 25%;
+}
+
+.loop_5 {
+  width: 20%;
+}
+
+.loop_6 {
+  width: 16.6%;
+}
+
+.loop_7 {
+  width: 14.285%;
+}
+
+.loop_8 {
+  width: 12.5%;
+}
+
+.loop_9 {
+  width: 11.1%;
+}
+
+.loop_10 {
+  width: 10%;
+}
+
+.loop_11 {
+  width: 9.09%;
+}
+
+.loop_12 {
+  width: 8.333%;
+}
+
+@media(max-width:768px) {
+  .loop-1,.loop-10,.loop-11,.loop-12,.loop-2,
+  .loop-3,.loop-4,.loop-5,.loop-6,.loop-7,
+  .loop-8,.loop-9,.loop_1,.loop_10,.loop_11,
+  .loop_12,.loop_2,.loop_3,.loop_4,.loop_5,
+  .loop_6,.loop_7,.loop_8,.loop_9 {
+    width: 100%;
+  }
+}
