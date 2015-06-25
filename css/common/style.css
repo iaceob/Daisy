@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Segoe UI Light';
+    src:url('../../font/segoeuil.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-  font-family: "Microsoft YaHei","宋体","Segoe WP", "Segoe UI Light", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+  font-family:'Segoe UI Light', "Microsoft YaHei","宋体","Segoe WP", "Segoe UI Light", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
   font-size: 14px;
   color: #333;
   background-color: #fff;
