@@ -1,21 +1,21 @@
-.page-breadcrumb {
+.page .breadcrumb {
   position: relative;
   background: #fff;
   height: 34px;
   display: block;
   padding: 0;
 }
-.page-breadcrumb .breadcrumb-list {
+.page .breadcrumb .list {
   background-color: transparent;
   font-size: 12px;
   color: #333;
   border-radius: 0;
   padding: 0;
 }
-.page-breadcrumb .breadcrumb-list > li {
+.page .breadcrumb .list > li {
   display: inline-block;
 }
-.page-breadcrumb .breadcrumb-list > li > a {
+.page .breadcrumb .list > li > a {
   display: block;
   color: #333;
   height: 34px;
@@ -28,7 +28,7 @@
   text-decoration: none;
   padding: 0 12px 0 24px;
 }
-.page-breadcrumb .breadcrumb-list > li > a:before {
+.page .breadcrumb .list > li > a:before {
   content: " ";
   display: block;
   width: 0;
@@ -43,7 +43,7 @@
   left: 100%;
   z-index: 3;
 }
-.page-breadcrumb .breadcrumb-list > li > a:after {
+.page .breadcrumb .list > li > a:after {
   content: " ";
   display: block;
   width: 0;
