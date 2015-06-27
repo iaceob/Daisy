@@ -47,3 +47,24 @@ dt {
 p {
     margin: 0 0 10px;
 }
+
+.text-primary,
+.text-primary:hover {
+    color: #2780e3;
+}
+.text-success,
+.text-success:hover {
+    color: #3fb618;
+}
+.text-danger,
+.text-danger:hover {
+    color: #ff0039;
+}
+.text-warning,
+.text-warning:hover {
+    color: #ff7518;
+}
+.text-info,
+.text-info:hover {
+    color: #9954bb;
+}
