@@ -56,6 +56,9 @@
 .fg-color-grayDark {
     color: #525252 !important;
 }
+.fg-color-alizarin {
+    color: rgb(231, 76, 60) !important;
+}
 
 .bg-color-blue {
     background-color: #2e8bcc !important;
@@ -107,6 +110,9 @@
 }
 .bg-color-grayDark {
     background-color: #525252 !important;
+}
+.bg-color-alizarin {
+    background-color: rgb(231, 76, 60) !important;
 }
 
 [class*=border-color] {
@@ -163,6 +169,10 @@
 .border-color-grayDark {
     border-color: #525252 !important;
 }
+.border-color-alizarin {
+    border-color: rgb(231, 76, 60) !important;
+}
+
 *:hover[class=outline-color] {
     outline: 3px solid;
 }
@@ -216,4 +226,7 @@
 }
 .outline-color-grayDark {
     outline-color: #525252 !important;
+}
+.outline-color-alizarin {
+    outline-color: rgb(231, 76, 60) !important;
 }
