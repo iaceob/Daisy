@@ -1,66 +1,70 @@
 input {
-  display: inline-block;
-  height: 32px;
-  border: 1px solid #ddd;
-  padding: 0 12px;
-}
-.input-wrapper > input {
-  display: block;
-  width: 100%;
+    display: inline-block;
+    height: 32px;
+    border: 1px solid #ddd;
+    padding: 0 12px;
 }
 form .form-control-key {
-  display: block;
-  margin-bottom: 12px;
-  height: 32px;
-  line-height: 32px;
+    display: block;
+    margin-bottom: 12px;
+    height: 32px;
+    line-height: 32px;
 }
 .form_vertical .form-control-key {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 form .form-control-block {
-  position: relative;
+    position: relative;
 }
 .form-horizontal .form-control:before {
-  display: table;
-  content: " ";
+    display: table;
+    content: " ";
 }
 .form-horizontal .form-control:after {
-  clear: both;
-  display: table;
-  content: " ";
+    clear: both;
+    display: table;
+    content: " ";
 }
 .form-horizontal .form-control > [class*="column-"] {
-  float: left;
+    float: left;
 }
 .input-wrapper {
-  position: relative;
+    position: relative;
+    display: -webkit-box;
 }
 .input-wrapper.pretty:before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  content: "";
-  width: 0;
-  height: 6px;
-  border-left: 1px solid #00ccff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    content: "";
+    width: 0;
+    height: 6px;
+    border-left: 1px solid #00ccff;
 }
 .input-wrapper.pretty:after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: block;
-  content: "";
-  width: 0;
-  height: 6px;
-  border-left: 1px solid #00ccff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    content: "";
+    width: 0;
+    height: 6px;
+    border-left: 1px solid #00ccff;
+}
+.input-wrapper > input {
+    display: block;
+    -webkit-box-flex:1;
 }
 .input-wrapper.pretty > input {
-  border-color: transparent;
-  border-bottom-color: #00ccff;
+    border-color: transparent;
+    border-bottom-color: #00ccff;
 }
 .input-wrapper > .form-control-block-icon {
-  position: absolute;
-  right: 0;
-  top: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.input-wrapper>button{
+    display: block;
 }

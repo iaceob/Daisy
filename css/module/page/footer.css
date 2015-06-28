@@ -1,15 +1,15 @@
-.page-footer{
+.page .footer{
     background: #333;
     padding: 20px 12px;
 }
-.page-footer p{
+.page .footer p{
     text-align: center;
     font-size: 12px;
 }
-.page-footer p .copyright{
+.page .footer p .copyright{
     color: #ccc;
 }
-.page-footer p .about-us{
+.page .footer p .about-us{
     font-weight: bold;
     color: #fff;
 }
