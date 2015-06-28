@@ -7,12 +7,20 @@ String.prototype.getBit = function (position) {
         return parseInt(this.substr((this.length - (position + 1)), 1));
     }
 };
+
+String.prototype.getBit = function(position){
+    return this.length<(position+1) ? 0 : parseInt(this.substr((this.length - (position + 1)), 1));
+    // return +!this.length<(position+1)||parseInt(this.substr((this.length - (position + 1)), 1));
+};
+
 String.prototype.replaceAll = function (reallyDo, replaceWith, ignoreCase) {
+    return RegExp.prototype.isPrototypeOf(reallyDo) ? this.replace(reallyDo, replaceWith) : this.replace(new RegExp(reallyDo, (ignoreCase ? "gi" : "g")), replaceWith);
+    /*
     if (!RegExp.prototype.isPrototypeOf(reallyDo)) {
         return this.replace(new RegExp(reallyDo, (ignoreCase ? "gi" : "g")), replaceWith);
     } else {
         return this.replace(reallyDo, replaceWith);
-    }
+    }*/
 }
 //去除左边的空格
 String.prototype.hasSubString = function (subString) {
