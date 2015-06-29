@@ -7,12 +7,7 @@ Math.square = function (x) {
 }
 
 function isBitSet(value, position) {
-    var result = false;
-
-    if ((value & (1 << position)) != 0) {
-        result = true;
-    }
-    return result;
+    return (value & (1 << position)) != 0;
 }
 
 function getBit(value, position) {

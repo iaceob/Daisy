@@ -7,6 +7,7 @@ String.prototype.getBit = function (position) {
         return parseInt(this.substr((this.length - (position + 1)), 1));
     }
 };
+
 String.prototype.replaceAll = function (reallyDo, replaceWith, ignoreCase) {
     if (!RegExp.prototype.isPrototypeOf(reallyDo)) {
         return this.replace(new RegExp(reallyDo, (ignoreCase ? "gi" : "g")), replaceWith);
@@ -14,6 +15,7 @@ String.prototype.replaceAll = function (reallyDo, replaceWith, ignoreCase) {
         return this.replace(reallyDo, replaceWith);
     }
 }
+
 //去除左边的空格
 String.prototype.hasSubString = function (subString) {
     if (this.indexOf(subString) > 0) {
@@ -23,18 +25,22 @@ String.prototype.hasSubString = function (subString) {
         return false;
     }
 }
+
 //去除左边的空格
 String.prototype.lTrim = function () {
     return this.replace(/(^\s*)/g, "");
 }
+
 //去除右边的空格
 String.prototype.rtrim = function () {
     return this.replace(/(\s*$)/g, "");
 }
+
 //去除前后空格
 String.prototype.trim = function () {
     return this.replace(/(^\s*)|(\s*$)/g, "");
 }
+
 //得到左边的字符串
 String.prototype.left = function (len) {
     if (isNaN(len) || len == null) {
@@ -47,6 +53,7 @@ String.prototype.left = function (len) {
     }
     return this.substr(0, len);
 }
+
 //得到右边的字符串
 String.prototype.right = function (len) {
     if (isNaN(len) || len == null) {
@@ -59,10 +66,12 @@ String.prototype.right = function (len) {
     }
     return this.substring(this.length - len, this.length);
 }
+
 //得到中间的字符串,注意从0开始
 String.prototype.Mid = function (start, len) {
     return this.substr(start, len);
 }
+
 //在字符串里查找另一字符串:位置从0开始
 String.prototype.InStr = function (str) {
 
@@ -72,6 +81,7 @@ String.prototype.InStr = function (str) {
 
     return this.indexOf(str);
 }
+
 //在字符串里反向查找另一字符串:位置0开始
 String.prototype.InStrRev = function (str) {
 
@@ -81,10 +91,12 @@ String.prototype.InStrRev = function (str) {
 
     return this.lastIndexOf(str);
 }
+
 //计算字符串打印长度
 String.prototype.lengthW = function () {
     return this.replace(/[^\x00-\xff]/g, "**").length;
 }
+
 //是否是正确的IP地址
 String.prototype.isIP = function () {
     var reSpaceCheck = /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/;
@@ -104,6 +116,7 @@ String.prototype.isIP = function () {
         return false;
     }
 }
+
 //是否是正确的长日期
 String.prototype.isLongDate = function () {
     var r = this.replace(/(^\s*)|(\s*$)/g, "").match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2}) (\d{1,2}):(\d{1,2}):(\d{1,2})$/);
@@ -114,6 +127,7 @@ String.prototype.isLongDate = function () {
     return (d.getFullYear() == r[1] && (d.getMonth() + 1) == r[3] && d.getDate() == r[4] && d.getHours() == r[5] && d.getMinutes() == r[6] && d.getSeconds() == r[7]);
 
 }
+
 //是否是正确的短日期
 String.prototype.isShortDate = function () {
     var r = this.replace(/(^\s*)|(\s*$)/g, "").match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
@@ -123,31 +137,38 @@ String.prototype.isShortDate = function () {
     var d = new Date(r[1], r[3] - 1, r[4]);
     return (d.getFullYear() == r[1] && (d.getMonth() + 1) == r[3] && d.getDate() == r[4]);
 }
+
 //是否是正确的日期
 String.prototype.isDate = function () {
     return this.isLongDate() || this.isShortDate();
 }
+
 //是否是手机
 String.prototype.isMobile = function () {
     return /^0{0,1}13[0-9]{9}$/.test(this);
 }
+
 //是否是邮件
 String.prototype.isEmail = function () {
     return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(this);
 }
+
 //是否是邮编(中国)
 String.prototype.isZipCode = function () {
     return /^[\\d]{6}$/.test(this);
 }
+
 //是否是有汉字
 String.prototype.existChinese = function () {
     //[\u4E00-\u9FA5]為漢字﹐[\uFE30-\uFFA0]為全角符號
     return /^[\x00-\xff]*$/.test(this);
 }
+
 //是否是合法的文件名/目录名
 String.prototype.isFileName = function () {
     return !/[\\\/\*\?\|:"<>]/g.test(this);
 }
+
 //是否是有效链接
 String.prototype.isUrl = function () {
     return /^http[s]?:\/\/([\w-]+\.)+[\w-]+([\w-./?%&=]*)?$/i.test(this);

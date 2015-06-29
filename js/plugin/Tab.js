@@ -12,3 +12,6 @@ class Point {
     }
 
 }
+
+var point=new Point(2,3);
+console.log(point.toString());

@@ -32,7 +32,7 @@ HTMLElement.prototype.trigger = function (triggerEvent, isBubble, isPreventDefau
     //调用document对象的 createEvent 方法得到一个event的对象实例。
     var event = document.createEvent('HTMLEvents');
     // initEvent接受3个参数:事件类型，是否冒泡，是否阻止浏览器的默认行为
-    event.initEvent("ondataavailable", bubble, preventDefault);
+    event.initEvent('ondataavailable', bubble, preventDefault);
     event.eventType = 'message';
     //触发document上绑定的自定义事件ondataavailable
     this.dispatchEvent(triggerEvent);
