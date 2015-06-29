@@ -6,42 +6,35 @@ Object.prototype.setParameters = function (parameters) {
     }
 }
 
+/*
 Object.prototype.isClassOf = function (className) {
     var currentObject = this;
 
     while (currentObject != Object) {
 
-        if (currentObject.constructor == className) {
-            return true;
-        }
-
-        if (currentObject.__proto__) {
+        if (currentObject.constructor == className) return true;
+        if (currentObject.__proto__)
             currentObject = currentObject.__proto__;
-        }
-        else {
+        else
             return false;
-        }
     }
 
     return false;
-}
+};
+*/
 
 Object.prototype.getName = function () {
     var s = this.constructor.toString();
-    if (s.indexOf('function') == -1) {
-        return null;
-    }
-    else {
-        s = s.replace('function', '');
-        var idx = s.indexOf('(');
-        s = s.substring(0, idx);
-        s = s.replace(" ", "");
-    }
+    if (s.indexOf('function') == -1)return null;
+
+    s = s.replace('function', '');
+    var idx = s.indexOf('(');
+    s = s.substring(0, idx);
+    s = s.replace(' ', '');
     return s;
 }
 
 Object.prototype.extend = function (dataCell) {
-    for (var property in dataCell) {
+    for (var property in dataCell)
         this[property] = dataCell[property];
-    }
 }

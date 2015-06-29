@@ -1,10 +1,10 @@
-function datetimeTOdatetimelocal(datetime){
+function toDatetimeLocal(datetime){
     var date_time=datetime.split(' ');
     return date_time[0]+'T'+date_time[1];
 }
 
-function datetimelocalTOdatetime(datetimelocal){
-    var date_time=datetime.split('T');
+function toDatetime(datetimelocal){
+    var date_time=datetimelocal.split('T');
     return date_time[0]+' '+date_time[1];
 }
 
