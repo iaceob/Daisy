@@ -2,7 +2,6 @@ function ButtonSet(domElement, options) {
     Plugin.call(this,domElement,options);
 
     var $this = this;
-    domElement.buttonSet=this;
     var buttons = domElement.querySelectorAll(".button");
 
     for (var i = 0; i < buttons.length; i++) {
@@ -16,4 +15,5 @@ function ButtonSet(domElement, options) {
         })
     }
 }
-ButtonSet.prototype=new Plugin();
+ButtonSet.prototype=Plugin.prototype;
+ButtonSet.prototype.constructor = ButtonSet;

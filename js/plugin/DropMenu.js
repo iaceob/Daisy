@@ -6,7 +6,6 @@ function DropMenu(domElement, options) {
     Plugin.call(this,domElement,options);
 
     var $this = this;
-    domElement.dropMenu=$this;
 
     var triggerEvent = "click" || options.triggerEvent;
     var target = domElement;
@@ -41,4 +40,5 @@ function DropMenu(domElement, options) {
 
     });
 }
-DropMenu.prototype=new Plugin();
+DropMenu.prototype=Plugin.prototype;
+DropMenu.prototype.constructor = DropMenu;

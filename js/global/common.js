@@ -9,7 +9,7 @@ function StartControl(domElement) {
         for (var j = 0; j < controlNames.length; j++) {
             var controlName = controlNames[j].replaceFirstUpper();
             if(!controlDom[controlName]){
-                window[controlName.replaceFirstUpper()](controlDom);
+                new window[controlName.replaceFirstUpper()](controlDom);
             }
         }
     }

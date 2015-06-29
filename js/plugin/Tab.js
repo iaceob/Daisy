@@ -1,8 +1,6 @@
 function Tab(domElement, options) {
     Plugin.call(this,domElement,options);
-
     var $this = this;
-    domElement["tab"]=$this;
 
     var tabNavList = domElement.querySelector(".tab-nav-list");
     var tabBox = domElement.querySelector(".tab-box");
@@ -27,4 +25,5 @@ function Tab(domElement, options) {
         })(i);
     }
 }
-Tab.prototype=new Plugin();
+Tab.prototype=Plugin.prototype;
+Tab.prototype.constructor = Tab;
