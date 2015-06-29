@@ -19,6 +19,26 @@ body {
     box-sizing: border-box;
 }
 
+/*resetBoxSizing*/
+.resetBoxSizing{
+    box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ */
+button,input[type=button],input[type=submit] {
+    -webkit-user-select: none;
+    cursor:pointer;
+}
+
+/*input and textarea*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
 .pull-left {
     float: left;
 }
@@ -36,4 +56,93 @@ body {
 
 .padding-base{
     padding: 10px;
+}
+
+/*clearfix*/
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:before,.clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
+
+/*scrollbar*/
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width:6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(214,214,214,0.8);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+}
+
+/*text-align*/
+.text-left{
+    text-align: left;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+
+/*position*/
+.position-absolute {
+    position:absolute;
+}
+.position-relative {
+    position:relative;
+}
+
+.flexbox{
+    display:flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flexbox !important;
+}
+.flex-adapter{
+    display:block;
+    flex:1;
+    -ms-flex:1;
+    -webkit-box-flex:1;
+    -moz-box-flex:1;
+}
+.vertical-flexbox{
+    display:flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flexbox !important;
+    -webkit-box-orient: vertical;
+    flex-flow: column wrap;
+}
+.horizontal-flexbox{
+    display:flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flexbox !important;
+    flex-flow: row wrap;
+}
+.vertical-adapter-inherit{
+    display:flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flexbox !important;
+    flex:1;
+    -ms-flex:1;
+    -webkit-box-flex:1;
+    -moz-box-flex:1;
+    -webkit-box-orient: vertical;
+    flex-flow: column wrap;
 }

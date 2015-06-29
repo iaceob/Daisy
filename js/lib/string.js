@@ -1,19 +1,9 @@
 String.prototype.getBit = function (position) {
-
-    if (this.length < (position + 1)) {
-        return 0;
-    }
-    else {
-        return parseInt(this.substr((this.length - (position + 1)), 1));
-    }
+    return this.length<(position+1) ? 0 : parseInt(this.substr((this.length - (position + 1)), 1));
 };
 
 String.prototype.replaceAll = function (reallyDo, replaceWith, ignoreCase) {
-    if (!RegExp.prototype.isPrototypeOf(reallyDo)) {
-        return this.replace(new RegExp(reallyDo, (ignoreCase ? "gi" : "g")), replaceWith);
-    } else {
-        return this.replace(reallyDo, replaceWith);
-    }
+    return RegExp.prototype.isPrototypeOf(reallyDo) ? this.replace(reallyDo, replaceWith) : this.replace(new RegExp(reallyDo, (ignoreCase ? "gi" : "g")), replaceWith);
 }
 
 //去除左边的空格
@@ -147,7 +137,6 @@ String.prototype.isDate = function () {
 String.prototype.isMobile = function () {
     return /^0{0,1}13[0-9]{9}$/.test(this);
 }
-
 //是否是邮件
 String.prototype.isEmail = function () {
     return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(this);
@@ -157,7 +146,6 @@ String.prototype.isEmail = function () {
 String.prototype.isZipCode = function () {
     return /^[\\d]{6}$/.test(this);
 }
-
 //是否是有汉字
 String.prototype.existChinese = function () {
     //[\u4E00-\u9FA5]為漢字﹐[\uFE30-\uFFA0]為全角符號
@@ -263,6 +251,20 @@ String.prototype.toCase = function () {
         }
     }
     return tmp
+}
+
+String.prototype.replaceFirstUpper=function(){
+    var str = this.toLowerCase();
+    return str.replace(/\b(\w)|\s(\w)/g, function(m){
+        return m.toUpperCase();
+    });
+}
+
+String.prototype.replaceFirstLower=function(){
+    var str = this.toUpperCase();
+    return str.replace(/\b(\w)|\s(\w)/g, function(m){
+        return m.toLowerCase();
+    });
 }
 
 //对字符串进行Html编码

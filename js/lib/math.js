@@ -6,10 +6,6 @@ Math.square = function (x) {
     return x * x;
 }
 
-function isBitSet(value, position) {
-    return (value & (1 << position)) != 0;
-}
-
 function getBit(value, position) {
     var result = 0;
 
@@ -18,6 +14,7 @@ function getBit(value, position) {
     }
     return result;
 }
+
 
 function clamp(x, a, b) {
     return (x < a) ? a : ((x > b) ? b : x);

@@ -41,3 +41,65 @@
 .column-10 {
   width: 100%;
 }
+
+.width-em5{
+    width:5em;
+}
+.width-em10{
+    width:10em;
+}
+.width-em15{
+    width:15em;
+}
+.width-em20{
+    width:20em;
+}
+.width-em25{
+    width:25em;
+}
+.width-em30{
+    width:30em;
+}
+.width-em35{
+    width:35em;
+}
+.width-em40{
+    width:40em;
+}
+.width-em45{
+    width:45em;
+}
+.width-em50{
+    width:50em;
+}
+.width-em55{
+    width:55em;
+}
+.width-em60{
+    width:60em;
+}
+.width-em65{
+    width:65em;
+}
+.width-em70{
+    width:70em;
+}
+
+.height-em5{
+    height:5em;
+}
+.height-em10 {
+    height:10em;
+}
+.height-em20 {
+    height:2em;
+}
+.height-em30 {
+    height:30em;
+}
+.height-em40{
+    height:40em;
+}
+.height-em50{
+    height:50em;
+}

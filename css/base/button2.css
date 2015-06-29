@@ -1,0 +1,103 @@
+@charset 'utf-8';
+
+.button {
+    position: relative;
+    text-decoration: none;
+    background: transparent;
+    color: #333;
+
+    /*
+     * TODO button-default 是否默认 若非默认 将所有 button 都需要继承
+     */
+    border-radius: 2px;
+    text-shadow: 1px 1px 2px #bfbfbf;
+    padding: 10px 20px;
+    border: solid #ccc 1px;
+
+}
+.button::-moz-focus-inner {
+    border: none;
+}
+.button:hover {
+    border-color: #333;
+    text-decoration: none;
+}
+
+.button.button-default {
+
+}
+.button.button-default:hover {
+
+}
+.button.button-default:active {
+    animation: .3s active-button-default;
+    background: #c4c4c4;
+}
+
+@keyframes active-button-default {
+    0% { background: #f0f0f0; }
+    50% { background: #dbdbdb; }
+    100% { background: #c4c4c4; }
+}
+
+.button.button-success {
+    background-color: #60a917;
+    color: #fff;
+}
+
+.button.button-success:active {
+    animation: .3s active-button-success;
+    background: #29a900;
+    filter: grayscale(50%);
+}
+
+@keyframes active-button-success {
+    0% { background: #5da913;  filter: grayscale(20%);  }
+    50% { background: #4aa90b;  filter: grayscale(40%);  }
+    100% { background: #29a900;  filter: grayscale(50%);  }
+}
+
+
+.button.button-info {
+    background-color: #1ba1e2;
+    color: #fff;
+}
+.button.button-info:active {
+    animation: .3s active-button-info;
+    filter: grayscale(50%);
+}
+@keyframes active-button-info {
+    0% { filter: grayscale(20%);  }
+    50% { filter: grayscale(40%);  }
+    100% { filter: grayscale(50%);  }
+}
+
+.button.button-warning {
+    background-color: #fa6800;
+    color: #fff;
+}
+
+.button.button-warning:active {
+    animation: .3s active-button-warning;
+    filter: grayscale(50%);
+}
+@keyframes active-button-warning {
+    0% { filter: grayscale(20%);  }
+    50% { filter: grayscale(40%);  }
+    100% { filter: grayscale(50%);  }
+}
+
+
+.button.button-alert {
+    background-color: #ce352c;
+    color: #fff;
+}
+.button.button-alert:active {
+    animation: .3s active-button-alert;
+    filter: grayscale(50%);
+}
+@keyframes active-button-alert {
+    0% { filter: grayscale(20%);  }
+    50% { filter: grayscale(40%);  }
+    100% { filter: grayscale(50%);  }
+}
