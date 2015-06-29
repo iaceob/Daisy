@@ -261,7 +261,7 @@ String.prototype.replaceFirstUpper=function(){
 }
 
 String.prototype.replaceFirstLower=function(){
-    var str = this.toUpperCase();
+    var str = this;
     return str.replace(/\b(\w)|\s(\w)/g, function(m){
         return m.toLowerCase();
     });

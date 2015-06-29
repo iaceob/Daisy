@@ -1,8 +1,7 @@
 function Progress(domElement,options) {
-    lugin.call(this,domElement,options);
+    Plugin.call(this,domElement,options);
 
     var $this = this;
-    domElement.progress=$this;
 
     this.options = options || {};
 
@@ -18,4 +17,5 @@ function Progress(domElement,options) {
         indicator.style.width = value + "%";
     }
 }
-Progress.prototype=new Plugin();
+Progress.prototype=Plugin.prototype;
+Progress.prototype.constructor = Progress;

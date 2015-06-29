@@ -241,7 +241,8 @@ function ColorPicker(domElement,options) {
         this.options.callback = callback;
     };
 }
-ColorPicker.prototype=new Plugin();
+ColorPicker.prototype=Plugin.prototype;
+ColorPicker.prototype.constructor = ColorPicker;
 
 //ColorPickerColor
 var ColorPickerColor = [
