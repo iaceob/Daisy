@@ -27,7 +27,7 @@ Object.prototype.isClassOf = function (className) {
 }
 
 Object.prototype.getName = function () {
-    s = this.constructor.toString();
+    var s = this.constructor.toString();
     if (s.indexOf('function') == -1) {
         return null;
     }

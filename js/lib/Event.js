@@ -2,11 +2,11 @@ function Event() {
     this.EventDelegate = new Array()
 }
 
-Event.prototype.Add = function(a, b) {
+Event.prototype.add = function(a, b) {
     this.EventDelegate.push([a, b])
 }
 
-Event.prototype.Remove = function(a) {
+Event.prototype.remove = function(a) {
     for (var b = 0; b < this.EventDelegate.length; ++b) {
         if (this.EventDelegate[b][0] == a) {
             this.EventDelegate.splice(b, 1);
@@ -15,11 +15,11 @@ Event.prototype.Remove = function(a) {
     }
 }
 
-Event.prototype.Clear = function() {
+Event.prototype.clear = function() {
     this.EventDelegate = new Array()
 }
 
-Event.prototype.Dispatch = function() {
+Event.prototype.dispatch = function() {
     var a = arguments;
     for (var b = 0; b < this.EventDelegate.length; ++b) {
         this.EventDelegate[b][0].apply(this.EventDelegate[b][1], a)
@@ -35,10 +35,10 @@ function Timer() {
 
 Timer.Pause = false;
 Timer.sigTimer = new Event();
-Timer.prototype.OnSigTimer = function() {
-    if (this.enable && (Timer.GetTime() >= this.time)) {
+Timer.prototype.onSigTimer = function() {
+    if (this.enable && (Timer.getTime() >= this.time)) {
         this.OnTimer.Dispatch();
-        this.time = Timer.GetTime() + this.interval
+        this.time = Timer.getTime() + this.interval
     }
 }
 
@@ -48,34 +48,34 @@ Timer.SigTimer = function() {
     }
 }
 
-Timer.prototype.Start = function() {
+Timer.prototype.start = function() {
     if (!this.enable) {
         this.enable = true;
-        this.time = Timer.GetTime() + this.interval;
+        this.time = Timer.getTime() + this.interval;
         Timer.sigTimer.Add(this.OnSigTimer, this)
     }
 }
 
-Timer.prototype.Stop = function() {
+Timer.prototype.stop = function() {
     if (this.enable) {
         this.enable = false;
         Timer.sigTimer.Remove(this.OnSigTimer)
     }
 }
 
-Timer.prototype.IsEnabled = function() {
+Timer.prototype.isEnabled = function() {
     return this.enable
 }
 
-Timer.prototype.SetInterval = function(a) {
+Timer.prototype.setInterval = function(a) {
     this.interval = a;
-    this.time = Timer.GetTime() + this.interval
+    this.time = Timer.getTime() + this.interval
 }
 
-Timer.prototype.GetInterval = function() {
+Timer.prototype.getInterval = function() {
     return this.interval
 }
 
-Timer.GetTime = function() {
+Timer.getTime = function() {
     return (new Date).getTime() * 0.001
 }
