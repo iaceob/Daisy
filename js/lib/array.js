@@ -1,3 +1,5 @@
+/*
+// This frame not support IE
 //Array.forEach implementation for IE support..
 if (!Array.prototype.forEach) {
     Array.prototype.forEach = function (callback, thisArg) {
@@ -24,33 +26,34 @@ if (!Array.prototype.forEach) {
         }
     };
 }
+*/
 
-Array.prototype.clone = function () {
-    var temp = new Array();
-    for (var i = 0; i < this.length; i++) {
-        temp[i] = this[i];
-    }
-    return temp;
+/**
+ * 数组 clone
+ * @returns {Array}
+ */
+Array.prototype.clone = function(){
+    var tmp = [];
+    for (var i = 0; i < this.length; i++) tmp[i] = this[i];
+    return tmp;
 };
 
-Array.prototype.empty = function () {
-    this.length = 0;
-};
 
 Array.prototype.max = function () {
-    return Math.max.apply({}, this)
+    return Math.max.apply({}, this);
 };
 
 Array.prototype.min = function () {
-    return Math.min.apply({}, this)
+    return Math.min.apply({}, this);
 };
 
-Array.prototype.set = function () {
-    for (var i = 0; i < arguments.length; i++) {
+Array.prototype.reset = function () {
+    for (var i = 0; i < arguments.length; i++)
         this[i] = arguments[i];
-    }
+    return this;
 };
 
+/*
 Array.prototype.removeElement = function (object) {
     for (var i = 0; i < this.length; i++) {
         if (this[i] === object) {
@@ -59,11 +62,13 @@ Array.prototype.removeElement = function (object) {
         }
     }
 };
+*/
 
 Array.prototype.remove=function(dx) {
     if(isNaN(dx)||dx>this.length) return false;
     this.splice(dx,1);
 };
+
 Array.prototype.clear= function(){
     for(var i=this.length; (i--)>0;) this.remove(i);
 };

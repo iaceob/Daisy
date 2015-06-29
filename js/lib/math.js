@@ -17,11 +17,11 @@ function isBitSet(value, position) {
 }
 */
 
-function isBitSet(value, position) {
+function getBit(value, position) {
     return (value & (1 << position));
 }
 
-// TODO result ???
+/*
 function getBit(value, position) {
     var result = 0;
 
@@ -30,7 +30,7 @@ function getBit(value, position) {
     }
     return result;
 }
-
+*/
 
 function clamp(x, a, b) {
     return (x < a) ? a : ((x > b) ? b : x);

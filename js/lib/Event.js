@@ -1,5 +1,5 @@
 function Event() {
-    this.EventDelegate = new Array()
+    this.EventDelegate = [];
 }
 
 Event.prototype.add = function(a, b) {
@@ -8,10 +8,13 @@ Event.prototype.add = function(a, b) {
 
 Event.prototype.remove = function(a) {
     for (var b = 0; b < this.EventDelegate.length; ++b) {
+        this.EventDelegate[b][0]!=a||this.EventDelegate.splice(b, 1);
+        /*
         if (this.EventDelegate[b][0] == a) {
             this.EventDelegate.splice(b, 1);
             break
         }
+        */
     }
 }
 
@@ -22,7 +25,7 @@ Event.prototype.clear = function() {
 Event.prototype.dispatch = function() {
     var a = arguments;
     for (var b = 0; b < this.EventDelegate.length; ++b) {
-        this.EventDelegate[b][0].apply(this.EventDelegate[b][1], a)
+        this.EventDelegate[b][0].apply(this.EventDelegate[b][1], a);
     }
 }
 
@@ -42,25 +45,26 @@ Timer.prototype.onSigTimer = function() {
     }
 }
 
-Timer.SigTimer = function() {
+Timer.sigTimer = function() {
+    Timer.Pause||Timer.sigTimer.Dispatch();
+    /*
     if (!Timer.Pause) {
         Timer.sigTimer.Dispatch()
     }
+    */
 }
 
 Timer.prototype.start = function() {
-    if (!this.enable) {
-        this.enable = true;
-        this.time = Timer.getTime() + this.interval;
-        Timer.sigTimer.Add(this.OnSigTimer, this)
-    }
+    if (this.enable) return;
+    this.enable = true;
+    this.time = Timer.getTime() + this.interval;
+    Timer.sigTimer.add(this.onSigTimer, this);
 }
 
 Timer.prototype.stop = function() {
-    if (this.enable) {
-        this.enable = false;
-        Timer.sigTimer.Remove(this.OnSigTimer)
-    }
+    if (!this.enable) return;
+    this.enable = false;
+    Timer.sigTimer.remove(this.onSigTimer);
 }
 
 Timer.prototype.isEnabled = function() {

@@ -31,9 +31,7 @@ function extend(destination, source) {
 
 function extendValue(destination, source) {
     for (var property in source) {
-        if (typeof source[property] == "function") {
-            continue;
-        }
+        if (typeof source[property] == 'function') continue;
         destination[property] = source[property];
     }
     return destination;

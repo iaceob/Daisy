@@ -11,18 +11,11 @@ HTMLElement.prototype.pageY = function () {
 //通过元素获取表单的form
 HTMLElement.prototype.getForm = function (obj) {
     var currentObj = obj;
-
     while (currentObj != document.body) {
-
-        if (currentObj.parentNode.nodeName.toLowerCase() == "form") {
+        if (currentObj.parentNode.nodeName.toLowerCase() == 'form')
             return currentObj.parentNode;
-        }
-        else {
-            currentObj = currentObj.parentNode;
-        }
-
+        currentObj = currentObj.parentNode;
     }
-
     return false;
 }
 
@@ -39,12 +32,8 @@ HTMLElement.prototype.trigger = function (triggerEvent, isBubble, isPreventDefau
 }
 
 HTMLElement.prototype.isParent = function (obj) {
-
     while (obj != undefined && obj != null && obj.tagName.toUpperCase() != 'BODY') {
-
-        if (obj == this) {
-            return true;
-        }
+        if (obj == this) return true;
         obj = obj.parentNode;
     }
     return false;
@@ -57,6 +46,7 @@ HTMLElement.prototype.insertAfter = function (targetElement) {
      *---*/
     var parent = targetElement.parentNode;
     //把目标元素的parpentNode属性值提取到变量parent里；
+    /*
     if (parent.lastChild == targetElement)
     //检查目标元素是不是parent的最后一个元素，即比较parent元素的lastChild属性值与目标元素是否存“等于”关系；
     {
@@ -66,15 +56,20 @@ HTMLElement.prototype.insertAfter = function (targetElement) {
         parent.insertBefore(this, targetElement.nextSibling);
         //上面如果是false，就把新元素插入到目标元素和parent元素的下一个子元素的中间。目标元素后面的下一个兄弟节点是目标元素的nextSibling属性，用insertBefore()方法把新元素插入到目标元素的下一个兄弟节点的前面；
     }
+    */
+    parent.lastChild == targetElement ? parent.appendChild(this) : parent.insertBefore(this, targetElement.nextSibling);
 }
 
 HTMLElement.prototype.getStyle = function () {
+    return window.getComputedStyle ? window.getComputedStyle(this, null) : this.currentStyle;
+    /*
     if (window.getComputedStyle) {
         return window.getComputedStyle(this, null);
     }
     else {
         return this.currentStyle;
     }
+    */
 }
 
 HTMLIFrameElement.prototype.setCharset = function () {
