@@ -1,13 +1,10 @@
 String.prototype.getBit = function (position) {
-    return this.length < (position + 1) ? 0 : parseInt(this.substr((this.length - (position + 1)), 1));
-    /*
+
     if (this.length < (position + 1)) {
         return 0;
-    }
-    else {
+    } else {
         return parseInt(this.substr((this.length - (position + 1)), 1));
     }
-    */
 };
 
 String.prototype.getBit = function(position){
@@ -26,33 +23,31 @@ String.prototype.replaceAll = function (reallyDo, replaceWith, ignoreCase) {
 }
 //去除左边的空格
 String.prototype.hasSubString = function (subString) {
-    return this.indexOf(subString) > 0;
-    /*
     if (this.indexOf(subString) > 0) {
         return true;
     }
     else {
         return false;
     }
-    */
 }
 //去除左边的空格
 String.prototype.lTrim = function () {
-    return this.replace(/(^\s*)/g, '');
+    return this.replace(/(^\s*)/g, "");
 }
 //去除右边的空格
 String.prototype.rtrim = function () {
-    return this.replace(/(\s*$)/g, '');
+    return this.replace(/(\s*$)/g, "");
 }
 //去除前后空格
 String.prototype.trim = function () {
-    return this.replace(/(^\s*)|(\s*$)/g, '');
+    return this.replace(/(^\s*)|(\s*$)/g, "");
 }
 //得到左边的字符串
 String.prototype.left = function (len) {
     if (isNaN(len) || len == null) {
         len = this.length;
-    } else {
+    }
+    else {
         if (parseInt(len) < 0 || parseInt(len) > this.length) {
             len = this.length;
         }
@@ -63,7 +58,8 @@ String.prototype.left = function (len) {
 String.prototype.right = function (len) {
     if (isNaN(len) || len == null) {
         len = this.length;
-    } else {
+    }
+    else {
         if (parseInt(len) < 0 || parseInt(len) > this.length) {
             len = this.length;
         }
@@ -71,16 +67,31 @@ String.prototype.right = function (len) {
     return this.substring(this.length - len, this.length);
 }
 //得到中间的字符串,注意从0开始
-String.prototype.mid = function (start, len) {
+String.prototype.Mid = function (start, len) {
     return this.substr(start, len);
 }
+//在字符串里查找另一字符串:位置从0开始
+String.prototype.InStr = function (str) {
 
+    if (str == null) {
+        str = "";
+    }
 
+    return this.indexOf(str);
+}
+//在字符串里反向查找另一字符串:位置0开始
+String.prototype.InStrRev = function (str) {
+
+    if (str == null) {
+        str = "";
+    }
+
+    return this.lastIndexOf(str);
+}
 //计算字符串打印长度
 String.prototype.lengthW = function () {
-    return this.replace(/[^\x00-\xff]/g, '**').length;
-};
-/*
+    return this.replace(/[^\x00-\xff]/g, "**").length;
+}
 //是否是正确的IP地址
 String.prototype.isIP = function () {
     var reSpaceCheck = /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/;
@@ -239,11 +250,11 @@ String.prototype.toCase = function () {
     }
     return tmp
 }
-*/
 
 //对字符串进行Html编码
 String.prototype.toHtmlEncode = function () {
     var str = this;
+
     str = str.replace(/&/g, "&amp;");
     str = str.replace(/</g, "&lt;");
     str = str.replace(/>/g, "&gt;");
@@ -252,10 +263,10 @@ String.prototype.toHtmlEncode = function () {
     str = str.replace(/\n/g, "<br>");
     str = str.replace(/\ /g, "&nbsp;");
     str = str.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;");
+
     return str;
 }
 
-/*
 //转换成日期
 String.prototype.toDate = function () {
     try {
@@ -265,52 +276,32 @@ String.prototype.toDate = function () {
         return null;
     }
 }
-*/
 
 //字符串逆转
 String.prototype.reverse = function () {
     var str = this;
-    if (str) {
-        var str1 = '';
+    if (str != "") {
+        var str1 = "";
         for (var i = str.length - 1; i >= 0; i--) {
             str1 += str.charAt(i);
         }
         return (str1);
     }
-};
-
-
-String.prototype.isBlank = function(){
-    var s = this.toString();
-    return s===null||''===s||undefined===s ? true : false;
-};
-
-String.prototype.notBlank = function(){
-    return !this.isBlank();
-};
-
-String.prototype.format = function(){
-    var args = arguments;
-    return this.replace(/\{(\d+)\}/g, function(m,i){
-        return args[i];
-    });
-};
-
-/*
+}
 
 //取文件路径
 String.prototype.getFilePath = function () {
     return this.substring(0, this.lastIndexOf("/"));
-};
+}
 
 //取文件后缀名
-String.prototype.getFileSuffix = function () {
+String.prototype.getFileExt = function () {
     var filepath = this;
-    if (filepath) {
-        var pos = filepath.replace(/.+\./, '');
+    if (filepath != "") {
+        var pos = filepath.replace(/.+\./, "");
         return pos;
     }
-};
+}
 
 //取文件全名名称
 String.prototype.getFileName = function () {
@@ -319,7 +310,7 @@ String.prototype.getFileName = function () {
         var names = filepath.split("\\");
         return names[names.length - 1];
     }
-};
+}
 
 //getFileNameNoExt
 String.prototype.getFileNameNoExt = function () {
@@ -329,18 +320,15 @@ String.prototype.getFileNameNoExt = function () {
     var pos1 = file.replace(pos, "").reverse();
     var pos2 = pos1.getFileName();
     return pos2;
-};
+}
 
 //去掉文件后缀名
 String.prototype.delExtension = function () {
     var reg = /.w+$/;
     return this.replace(reg, '');
-};
+}
 
- */
-
-/*
-//16进制颜色转为RGB格式
+/*16进制颜色转为RGB格式*/
 String.prototype.toRGB = function () {
     var sColor = this.toLowerCase();
     if (sColor && reg.test(sColor)) {
@@ -362,7 +350,7 @@ String.prototype.toRGB = function () {
     }
 }
 
-// 16进制颜色转为RGB格式
+/*16进制颜色转为RGB格式*/
 String.prototype.toRGBArray = function () {
     //十六进制颜色值的正则表达式
     var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
@@ -386,4 +374,3 @@ String.prototype.toRGBArray = function () {
         return sColor;
     }
 }
-*/
