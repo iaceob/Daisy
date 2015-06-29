@@ -18,6 +18,12 @@ body {
 * {
     box-sizing: border-box;
 }
+body, a, button, input {
+    cursor: default !important;
+}
+a:focus {
+    outline: none;
+}
 
 .pull-left {
     float: left;

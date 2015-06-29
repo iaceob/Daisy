@@ -10,11 +10,11 @@ Event.prototype.remove = function(a) {
     for (var b = 0; b < this.EventDelegate.length; ++b) {
         this.EventDelegate[b][0]!=a||this.EventDelegate.splice(b, 1);
         /*
-        if (this.EventDelegate[b][0] == a) {
-            this.EventDelegate.splice(b, 1);
-            break
-        }
-        */
+         if (this.EventDelegate[b][0] == a) {
+         this.EventDelegate.splice(b, 1);
+         break
+         }
+         */
     }
 }
 
@@ -48,10 +48,10 @@ Timer.prototype.onSigTimer = function() {
 Timer.sigTimer = function() {
     Timer.Pause||Timer.sigTimer.Dispatch();
     /*
-    if (!Timer.Pause) {
-        Timer.sigTimer.Dispatch()
-    }
-    */
+     if (!Timer.Pause) {
+     Timer.sigTimer.Dispatch()
+     }
+     */
 }
 
 Timer.prototype.start = function() {

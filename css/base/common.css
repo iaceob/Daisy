@@ -14,7 +14,7 @@ body {
   background-color: #fff;
   line-height: 1;
 }
-body, a, button, input {
+*, body, a, button, input {
   cursor: default !important;
 }
 img {

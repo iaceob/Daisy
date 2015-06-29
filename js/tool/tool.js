@@ -33,12 +33,64 @@
     };
     */
 
+    function querySelector(selector){
+        return document.querySelector(selector);
+    };
+    function querySelectorAll(selector){
+        return document.querySelectorAll(selector);
+    };
+    function execFunction(scope, func, params){
+        try {
+            if (!scope||!func) throw 'Unrecognized scope: {0} , and function: {1}'.format(scope, func);
+            var f = scope[func];
+            if (typeof f!=='function') throw 'scope {0} not found function: {1}'.format(scope, func);
+            new f(params);
+        } catch (e) {
+            console.log('The error occurred in the function being executed, function: {0}'.format(func));
+            console.debug(e);
+        }
+    };
+    function bind(target, type, func){
+        if (document.addEventListener) {
+            target.addEventListener(type, func);
+            return;
+        };
+        if (document.attachEvent) {
+            target.attachEvent('on'+type, func);
+            return;
+        };
+    };
+    function unbind(target, type, func) {
+        if (target.removeEventListener)
+            target.removeEventListener(type, func, false);
+        else if (target.detachEvent)
+            target.detachEvent("on" + type, func);
+        else delete target["on" + type];
+    };
+    function forEachNode(nodelist, callback){
+        for(var i=nodelist.length; i-->0;)
+            !callback||callback(nodelist[i]);
+    };
+
 
     tool.prototype = {
-        regex: regex
+        regex: regex,
+        $: querySelector,
+        $$: querySelectorAll,
+        execFunction: execFunction,
+        bind: bind,
+        unbind: unbind,
+        forEachNode: forEachNode
     };
 
 
 
-    window.tool = new tool();
+
+    // ===== 非公开
+
+
+
+
+
+    window.T = new tool();
 })(window);
