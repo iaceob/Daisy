@@ -1,31 +1,35 @@
-function StartControl(domElement) {
-    //control init
-    var controlDoms = domElement.querySelectorAll("[data-ride]");
+(function(window, undefined){
+    'use strict';
 
-    for (var i = 0; i < controlDoms.length; i++) {
-        var controlDom = controlDoms[i];
-        var controlNames = controlDom.dataset["ride"].split(" ");
+    function StartControl(domElement) {
+        //control init
+        var controlDoms = domElement.querySelectorAll("[data-ride]");
 
-        for (var j = 0; j < controlNames.length; j++) {
-            var controlName = controlNames[j].replaceFirstUpper();
-            if(!controlDom[controlName]){
-                new window[controlName.replaceFirstUpper()](controlDom);
-            }
+        for (var i = 0; i < controlDoms.length; i++) {
+            var controlDom = controlDoms[i];
+            var controlNames = controlDom.dataset["ride"].trim().split(" ");
+
+            controlNames.forEach(function(controlName){
+                if(!controlDom[controlName]){
+                    new window[controlName.replaceFirstUpper()](controlDom);
+                }
+            })
         }
     }
-}
 
-window.addEventListener("load", function () {
-    try{
-        prettyPrint();
-    }
-    catch(ex){
-        console.log(ex.message);
-    }
+    window.addEventListener("load", function () {
+        try{
+            prettyPrint();
+        }
+        catch(ex){
+            console.log(ex.message);
+        }
 
-    StartControl(document.body);
+        StartControl(document.body);
 
-    document.addEventListener("DOMNodeInserted",function(e){
-        StartControl(e.target);
+        document.addEventListener("DOMNodeInserted",function(e){
+            StartControl(e.target);
+        });
     });
-});
+
+})(window);

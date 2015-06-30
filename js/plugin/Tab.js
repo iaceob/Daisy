@@ -1,29 +1,35 @@
-function Tab(domElement, options) {
-    Plugin.call(this,domElement,options);
-    var $this = this;
+!(function(window,undefined){
+    'use strict';
 
-    var tabNavList = domElement.querySelector(".tab-nav-list");
-    var tabBox = domElement.querySelector(".tab-box");
-    var tabPages = tabBox.querySelectorAll(".tab-page");
-    var tabNavLis = tabNavList.querySelectorAll("li");
+    function Tab(domElement, options) {
+        Plugin.call(this,domElement,options);
+        var $this = this;
 
-    for (var i = 0; i < tabNavLis.length; i++) {
-        var tabNavLi = tabNavLis[i];
+        var tabNavList = domElement.querySelector(".tab-nav-list");
+        var tabBox = domElement.querySelector(".tab-box");
+        var tabPages = tabBox.querySelectorAll(".tab-page");
+        var tabNavLis = tabNavList.querySelectorAll("li");
 
-        (function (i) {
-            tabNavLi.addEventListener("click", function () {
-                tabNavList.querySelector(".actived").classList.remove("actived");
-                this.classList.add("actived");
-                var currentTabPage = tabBox.querySelector(".show");
-                currentTabPage.classList.remove("show");
-                currentTabPage.classList.add("hide");
+        for (var i = 0; i < tabNavLis.length; i++) {
+            var tabNavLi = tabNavLis[i];
 
-                var tabPage = document.getElementById(this.dataset["target"]) || tabPages[i];
-                tabPage.classList.remove("hide");
-                tabPage.classList.add("show");
-            });
-        })(i);
+            (function (i) {
+                tabNavLi.addEventListener("click", function () {
+                    tabNavList.querySelector(".actived").classList.remove("actived");
+                    this.classList.add("actived");
+                    var currentTabPage = tabBox.querySelector(".show");
+                    currentTabPage.classList.remove("show");
+                    currentTabPage.classList.add("hide");
+
+                    var tabPage = document.getElementById(this.dataset["target"]) || tabPages[i];
+                    tabPage.classList.remove("hide");
+                    tabPage.classList.add("show");
+                });
+            })(i);
+        }
     }
-}
-Tab.prototype=Plugin.prototype;
-Tab.prototype.constructor = Tab;
+    Tab.prototype=Plugin.prototype;
+    Tab.prototype.constructor = Tab;
+
+    window.Tab=Tab;
+})(window);

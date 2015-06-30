@@ -12,12 +12,12 @@
 
     // 内部执行
     function assignRide(){
-        var rides = t.$$('[data-ride]');
-        for(var i=rides.length; i-->0;) {
-            var ride = rides[i];
-            var rideData = ride.dataset['ride'].trim().toUpperCase().split(' ');
-            rideData.forEach(function(i){
-                callExpand(i, ride);
+        var ari = t.$$('[data-ride]');
+        for(var i=ari.length; i-->0;) {
+            var ci = ari[i];
+            var dc = ci.dataset['ride'].trim().split(' ');
+            dc.forEach(function(i){
+                callExpand(i.toUpperCase(), ci);
             });
         }
     };
