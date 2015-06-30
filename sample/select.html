@@ -5,6 +5,7 @@
     <title>Select Sample</title>
     <link rel="stylesheet" href="../css/global/common.css"/>
     <link rel="stylesheet" href="../css/base/grid.css"/>
+    <link rel="stylesheet" href="../css/base/select.css"/>
     <style>
         .container{
             padding-left: 10%;
@@ -14,6 +15,8 @@
             padding-top: 2px;
             padding-bottom: 2px;
         }
+        #tool {position: absolute;top: 0;right: 0;width: 5px;height: 100%;}
+        #tool-bar {width: 5px;background: #77c111;position: absolute;top: 0;left: 0;}
     </style>
 </head>
 <body>
@@ -21,7 +24,7 @@
 <div class="container">
     <div class="row">
         <div class="column-10">
-            <select name="c" id="c" autocomplete="off" class="select">
+            <select name="c" id="c" autocomplete="off" class="select" data-ride="select">
                 <option value="">default
                 <option value="1">阿尔及利亚
                 <option value="2">安哥拉
@@ -125,8 +128,8 @@
                 <option value="100">沙特阿拉伯
             </select>
         </div>
-        <div class="column-10">
-            <select name="s" id="s" autocomplete="off" class="select">
+        <div class="column-10" style="display: none">
+            <select name="s" id="s" autocomplete="off" class="select" data-ride="select">
                 <option value="">default
                 <option value="1">北京市
                 <option value="2">天津市
@@ -164,12 +167,11 @@
     </div>
 </div>
 
+<script src="../js/lib/string.js"></script>
 <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
-<script src="../js/plugin/selected2.js"></script>
-<script>
-    $(document).ready(function(){
-        selectedKit.init();
-    });
-</script>
+<script src="//localhost/store/dreamerslab-jquery.actual-cccd08c/jquery.actual.min.js"></script>
+<script src="../js/tool/tool.js"></script>
+<script src="../js/m/main.js"></script>
+<script src="../js/p/selected2.js"></script>
 </body>
 </html>
