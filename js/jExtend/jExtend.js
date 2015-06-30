@@ -45,9 +45,17 @@
             this.elements=[selector];
         }
         this.length=this.elements.length;
+        var arr = [];
+        for(var i=0; i<this.elements.length; i++){
+            arr.push(this.elements[i]);
+        }
+        return this.setArray(arr);
+    }
+    jExtend.prototype.setArray = function( arr ) {
+        this.length = 0;
+        [].push.apply( this, arr );
         return this;
     }
-
     //define each
     jExtend.prototype.each=function(callback,index){
         var elements=this.elements;

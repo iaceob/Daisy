@@ -15,5 +15,5 @@ promise.then(function(value) {
 });
 
 window.onload=function(){
-    console.log($("body"));
+    console.log($("p")[2]);
 }
