@@ -44,12 +44,8 @@
         else if(typeof selector == "object" &&selector instanceof Element){
             this.elements=[selector];
         }
-        this.length=this.elements.length;
-        var arr = [];
-        for(var i=0; i<this.elements.length; i++){
-            arr.push(this.elements[i]);
-        }
-        return this.setArray(arr);
+
+        return this.setArray(this.elements);
     }
     jExtend.prototype.setArray = function( arr ) {
         this.length = 0;
