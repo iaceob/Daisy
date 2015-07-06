@@ -1,4 +1,4 @@
-jExtend.version = {
+Squery.version = {
     pub: 'alpha',
     num: '0.0.1'
 };

@@ -1,10 +1,10 @@
-(function(window, jExtend, undefined){
+(function(window, Squery, undefined){
     'use strict';
-    jExtend.fn.hasClass=function(className){
+    Squery.fn.hasClass=function(className){
         return this[0].classList.contains(className)
     }
 
-    jExtend.fn.addClass=function(className){
+    Squery.fn.addClass=function(className){
         this.each(function(i){
             this.classList.add(className);
         });
@@ -13,7 +13,7 @@
         return this;
     }
 
-    jExtend.fn.removeClass=function(className){
+    Squery.fn.removeClass=function(className){
         this.each(function(i){
             this.classList.remove(className);
         });
@@ -22,7 +22,7 @@
         return this;
     }
 
-    jExtend.fn.toggleClass=function(className){
+    Squery.fn.toggleClass=function(className){
         this.each(function(i){
             this.classList.toggle(className);
         });
@@ -31,4 +31,4 @@
         return this;
     }
 
-})(window, jExtend);
+})(window, Squery);

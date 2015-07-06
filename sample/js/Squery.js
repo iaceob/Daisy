@@ -1,5 +1,6 @@
 window.onload=function(){
-    
+
+    console.log($("p").find("span"));
     //console.log($("p").hasClass("p"));
 
     //console.log($("p").toArray());
@@ -7,6 +8,8 @@ window.onload=function(){
     //console.log($("p").first()[0]);
 
     //console.log($("p").first()[0]);
+
+    console.log($("<div><p></p>saldfjksdf</div>4321dsa"));
 
     $.ajax({
         url:"/jquery/test1.txt",

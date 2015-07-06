@@ -2,7 +2,7 @@
  * Created by canknow on 2015/6/30.
  */
 
-(function( window,jExtend,undefined ) {
+(function( window,Squery,undefined ) {
 
     var ajaxSettings={
         url: window.location.href,
@@ -33,8 +33,8 @@
         // Keys separate source (or catchall "*") and destination types with a single space
         converters: {
             "text": window.String,
-            "json": jExtend.parseJSON,
-            "xml": jExtend.parseXML
+            "json": Squery.parseJSON,
+            "xml": Squery.parseXML
         }
     };
 
@@ -47,10 +47,10 @@
         };
     }
 
-    jExtend.ajax=function(options){
+    Squery.ajax=function(options){
 
         //创建一些默认值，拓展任何被提供的选项
-        var settings = jExtend.extend({
+        var settings = Squery.extend({
             'url': ajaxSettings.url,
             'type': ajaxSettings.type,
             'data':{},
@@ -81,7 +81,7 @@
                 break;
         }
 
-        var  deferred = new jExtend.Deferred(function(resolve, reject) {
+        var  deferred = new Squery.Deferred(function(resolve, reject) {
             xmlhttp.onreadystatechange=function(){
                 if (xmlhttp.readyState == 4) {
                     if (xmlhttp.status == 200) {
@@ -139,4 +139,4 @@
         return deferred;
     }
 
-})( window,jExtend);
+})( window,Squery);

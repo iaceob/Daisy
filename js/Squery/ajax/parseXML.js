@@ -1,5 +1,5 @@
 // Cross-browser xml parsing
-jExtend.parseXML = function( data ) {
+Squery.parseXML = function( data ) {
     var xml;
     if ( !data || typeof data !== "string" ) {
         return null;
@@ -14,7 +14,7 @@ jExtend.parseXML = function( data ) {
     }
 
     if ( !xml || xml.getElementsByTagName( "parsererror" ).length ) {
-        jExtend.error( "Invalid XML: " + data );
+        Squery.error( "Invalid XML: " + data );
     }
     return xml;
 };

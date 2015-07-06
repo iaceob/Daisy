@@ -5,21 +5,20 @@
 (function( window, undefined ) {
 
     //首先定义了jExtend函数。
-    function jExtend( selector, context ) {
-        return new jExtend.fn.init( selector, context );
+    function Squery( selector, context ) {
+        return new Squery.fn.init( selector, context );
     }
 
     //定义jExtend的原型。
-    jExtend.fn = jExtend.prototype = {
+    Squery.fn = Squery.prototype = {
 
         //因为重写了jExtend的原型所以把constructor从新指向jExtend
-        constructor: jExtend,
+        constructor: Squery,
 
         // Start with an empty selector
-
         selector: "",
 
-        // The default length of a jExtend object is 0
+        // The default length of a Squery object is 0
         length: 0,
         setArray: function( arr ) {
             this.length = 0;
@@ -33,17 +32,17 @@
         // Take an array of elements and push it onto the stack
         // (returning the new matched element set)
         pushStack: function( elems ) {
-            // Build a new jExtend matched element set
-            var ret = jExtend.merge( this.constructor(), elems );
+            // Build a new Squery matched element set
+            var result = Squery.merge( this.constructor(), elems );
             // Add the old object onto the stack (as a reference)
-            ret.prevObject = this;
+            result.prevObject = this;
             // Return the newly-formed element set
-            return ret;
+            return result;
         },
 
         // Execute a callback for every element in the matched set.
         each: function( callback ) {
-            return jExtend.each( this, callback );
+            return Squery.each( this, callback );
         },
         first: function() {
             return this.equal( 0 );
@@ -61,15 +60,15 @@
         }
     };
 
-    jExtend.extend = jExtend.fn.extend = function() {
+    Squery.extend = Squery.fn.extend = function() {
         var options, name, src, copy, copyIsArray, clone,
-            target = arguments[0] || {},// 常见用法 jExtend.extend( obj1, obj2 )，此时，target为arguments[0]
+            target = arguments[0] || {},// 常见用法 Squery.extend( obj1, obj2 )，此时，target为arguments[0]
             i = 1,
             length = arguments.length,
             deep = false;
 
         // Handle a deep copy situation
-        if ( typeof target === "boolean" ) {// 如果第一个参数为true，即 jExtend.extend( true, obj1, obj2 ); 的情况
+        if ( typeof target === "boolean" ) {// 如果第一个参数为true，即 Squery.extend( true, obj1, obj2 ); 的情况
             deep = target;// 此时target是true
             target = arguments[1] || {};// target改为 obj1
             // skip the boolean and the target
@@ -77,19 +76,19 @@
         }
 
         // Handle case when target is a string or something (possible in deep copy)
-        if ( typeof target !== "object" && !jExtend.isFunction(target) ) { // 处理奇怪的情况，比如 jExtend.extend( 'hello' , {nick: 'casper})~~
+        if ( typeof target !== "object" && !Squery.isFunction(target) ) { // 处理奇怪的情况，比如 Squery.extend( 'hello' , {nick: 'casper})~~
             target = {};
         }
 
-        // extend jExtend itself if only one argument is passed
-        if ( length === i ) {// 处理这种情况 jExtend.extend(obj)，或 jExtend.fn.extend( obj )
-            target = this;// jExtend.extend时，this指的是jExtend；jExtend.fn.extend时，this指的是jExtend.fn
+        // extend Squery itself if only one argument is passed
+        if ( length === i ) {// 处理这种情况 Squery.extend(obj)，或 Squery.fn.extend( obj )
+            target = this;// Squery.extend时，this指的是jExtend；Squery.fn.extend时，this指的是jExtend.fn
             --i;
         }
 
         for ( ; i < length; i++ ) {
             // Only deal with non-null/undefined values
-            if ( (options = arguments[ i ]) != null ) { // 比如 jExtend.extend( obj1, obj2, obj3, ojb4 )，options则为 obj2、obj3...
+            if ( (options = arguments[ i ]) != null ) { // 比如 Squery.extend( obj1, obj2, obj3, ojb4 )，options则为 obj2、obj3...
                 // Extend the base object
                 for ( name in options ) {
                     src = target[ name ];
@@ -102,18 +101,18 @@
 
                     // Recurse if we're merging plain objects or arrays
                     // 如果是深拷贝，且被拷贝的属性值本身是个对象
-                    if ( deep && copy && ( jExtend.isPlainObject(copy) || (copyIsArray = jExtend.isArray(copy)) ) ) {
+                    if ( deep && copy && ( Squery.isPlainObject(copy) || (copyIsArray = Squery.isArray(copy)) ) ) {
                         if ( copyIsArray ) { // 被拷贝的属性值是个数组
                             copyIsArray = false;
-                            clone = src && jExtend.isArray(src) ? src : [];
+                            clone = src && Squery.isArray(src) ? src : [];
 
                         }
                         else {
-                            clone = src && jExtend.isPlainObject(src) ? src : {};
+                            clone = src && Squery.isPlainObject(src) ? src : {};
                         }
 
                         // Never move original objects, clone them
-                        target[ name ] = jExtend.extend( deep, clone, copy );// 递归~
+                        target[ name ] = Squery.extend( deep, clone, copy );// 递归~
 
                         // Don't bring in undefined values
                     }
@@ -128,7 +127,7 @@
         return target;
     };
 
-    jExtend.extend({
+    Squery.extend({
         error: function(msg) {
             throw new Error(msg);
         },
@@ -168,7 +167,7 @@
             return first;
         },
         isFunction: function( obj ) {
-            return jExtend.type(obj) === "function";
+            return Squery.type(obj) === "function";
         },
         isArray: Array.isArray,
         isWindow: function( obj ) {
@@ -179,14 +178,14 @@
             // ...but misinterprets leading-number strings, particularly hex literals ("0x...")
             // subtraction forces infinities to NaN
             // adding 1 corrects loss of precision from parseFloat (#15100)
-            return !jExtend.isArray( obj ) && (obj - parseFloat( obj ) + 1) >= 0;
+            return !Squery.isArray( obj ) && (obj - parseFloat( obj ) + 1) >= 0;
         },
         isPlainObject: function( obj ) {
             // Not plain objects:
             // - Any object or value whose internal [[Class]] property is not "[object Object]"
             // - DOM nodes
             // - window
-            if ( jExtend.type( obj ) !== "object" || obj.nodeType || jExtend.isWindow( obj ) ) {
+            if ( Squery.type( obj ) !== "object" || obj.nodeType || Squery.isWindow( obj ) ) {
                 return false;
             }
 
@@ -216,7 +215,7 @@
 
     });
 
-    jExtend.param = function(obj) {
+    Squery.param = function(obj) {
         var prefix, s = [];
         for ( prefix in obj ) {
             s[ s.length ] = encodeURIComponent( prefix ) + "=" + encodeURIComponent( obj[ prefix ]);
@@ -224,7 +223,7 @@
         return s.join( "&" );
     }
 
-    jExtend.fn = jExtend.prototype;
+    Squery.fn = Squery.prototype;
 
-    window.jExtend = window.$ = jExtend;
+    window.Squery = window.$ = Squery;
 })( window);
