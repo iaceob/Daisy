@@ -33,8 +33,3 @@ Object.prototype.getName = function () {
     s = s.replace(' ', '');
     return s;
 }
-
-Object.prototype.extend = function (dataCell) {
-    for (var property in dataCell)
-        this[property] = dataCell[property];
-}
