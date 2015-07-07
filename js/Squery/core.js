@@ -136,6 +136,7 @@
                 length = obj.length,
                 isArray = isArraylike( obj );
 
+
             if ( isArray ) {
                 for ( ; i < length; i++ ) {
                     if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
