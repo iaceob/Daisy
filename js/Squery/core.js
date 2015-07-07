@@ -132,24 +132,14 @@
             throw new Error(msg);
         },
         each: function( obj, callback ) {
-            var i = 0,
-                length = obj.length,
-                isArray = isArraylike( obj );
+            var i = 0, length = obj.length;
 
-            if ( isArray ) {
-                for ( ; i < length; i++ ) {
-                    if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
-                        break;
-                    }
+            for ( ; i < length; i++ ) {
+                if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
+                    break;
                 }
             }
-            else {
-                for ( i in obj ) {
-                    if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
-                        break;
-                    }
-                }
-            }
+
             return obj;
         },
 
