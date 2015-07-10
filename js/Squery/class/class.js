@@ -5,7 +5,7 @@
     }
 
     Squery.fn.addClass=function(className){
-        this.each(function(i){
+        this.each(function(i, b){
             this.classList.add(className);
         });
 

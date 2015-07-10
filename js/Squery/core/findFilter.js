@@ -10,9 +10,8 @@
 
     Squery.fn.extend({
         selector:function(selector, context){
-            var context = context || document;
-            var results=context.querySelectorAll(selector);
-            return results;
+            context = context || document;
+            return context.querySelectorAll(selector);
         },
         find: function( selector ) {
             var i, results = [];

@@ -11,12 +11,13 @@
 
     //定义jExtend的原型。
     Squery.fn = Squery.prototype = {
+        splice:[].splice,
 
         //因为重写了jExtend的原型所以把constructor从新指向jExtend
         constructor: Squery,
 
         // Start with an empty selector
-        selector: "",
+        selector: '',
 
         // The default length of a Squery object is 0
         length: 0,
@@ -68,7 +69,7 @@
             deep = false;
 
         // Handle a deep copy situation
-        if ( typeof target === "boolean" ) {// 如果第一个参数为true，即 Squery.extend( true, obj1, obj2 ); 的情况
+        if ( typeof target === 'boolean' ) {// 如果第一个参数为true，即 Squery.extend( true, obj1, obj2 ); 的情况
             deep = target;// 此时target是true
             target = arguments[1] || {};// target改为 obj1
             // skip the boolean and the target
@@ -76,7 +77,7 @@
         }
 
         // Handle case when target is a string or something (possible in deep copy)
-        if ( typeof target !== "object" && !Squery.isFunction(target) ) { // 处理奇怪的情况，比如 Squery.extend( 'hello' , {nick: 'casper})~~
+        if ( typeof target !== 'object' && !Squery.isFunction(target) ) { // 处理奇怪的情况，比如 Squery.extend( 'hello' , {nick: 'casper})~~
             target = {};
         }
 
@@ -132,25 +133,14 @@
             throw new Error(msg);
         },
         each: function( obj, callback ) {
-            var i = 0,
-                length = obj.length,
-                isArray = isArraylike( obj );
+            var i = 0, length = obj.length;
 
-
-            if ( isArray ) {
-                for ( ; i < length; i++ ) {
-                    if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
-                        break;
-                    }
+            for ( ; i < length; i++ ) {
+                if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
+                    break;
                 }
             }
-            else {
-                for ( i in obj ) {
-                    if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
-                        break;
-                    }
-                }
-            }
+
             return obj;
         },
 
@@ -168,29 +158,29 @@
             return first;
         },
         isFunction: function( obj ) {
-            return Squery.type(obj) === "function";
+            return Squery.type(obj) === 'function';
         },
         isArray: Array.isArray,
         isWindow: function( obj ) {
             return obj != null && obj === obj.window;
         },
         isNumeric: function( obj ) {
-            // parseFloat NaNs numeric-cast false positives (null|true|false|"")
-            // ...but misinterprets leading-number strings, particularly hex literals ("0x...")
+            // parseFloat NaNs numeric-cast false positives (null|true|false|'')
+            // ...but misinterprets leading-number strings, particularly hex literals ('0x...')
             // subtraction forces infinities to NaN
             // adding 1 corrects loss of precision from parseFloat (#15100)
             return !Squery.isArray( obj ) && (obj - parseFloat( obj ) + 1) >= 0;
         },
         isPlainObject: function( obj ) {
             // Not plain objects:
-            // - Any object or value whose internal [[Class]] property is not "[object Object]"
+            // - Any object or value whose internal [[Class]] property is not '[object Object]'
             // - DOM nodes
             // - window
-            if ( Squery.type( obj ) !== "object" || obj.nodeType || Squery.isWindow( obj ) ) {
+            if ( Squery.type( obj ) !== 'object' || obj.nodeType || Squery.isWindow( obj ) ) {
                 return false;
             }
 
-            if ( obj.constructor &&!hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
+            if ( obj.constructor &&!hasOwn.call( obj.constructor.prototype, 'isPrototypeOf' ) ) {
                 return false;
             }
 
@@ -206,25 +196,28 @@
             return true;
         },
         type: function( obj ) {
-
             if ( obj == null ) {
-                return obj + "";
+                return obj + '';
             }
             // Support: Android<4.0 (functionish RegExp)
-            return typeof obj === "object" || typeof obj === "function" ? {}[ obj.toString ] || "object" : typeof obj;
+            return typeof obj === 'object' || typeof obj === 'function' ? {}[ obj.toString ] || 'object' : typeof obj;
+
+            // return obj==null ? obj+'' : (typeof obj === 'object' || typeof obj === 'function' ? {}[ obj.toString ] || 'object' : typeof obj);
         }
 
     });
 
+    /*
     Squery.param = function(obj) {
         var prefix, s = [];
         for ( prefix in obj ) {
-            s[ s.length ] = encodeURIComponent( prefix ) + "=" + encodeURIComponent( obj[ prefix ]);
+            s[ s.length ] = encodeURIComponent( prefix ) + '=' + encodeURIComponent( obj[ prefix ]);
         }
-        return s.join( "&" );
-    }
+        return s.join( '&' );
+    };
 
     Squery.fn = Squery.prototype;
+    */
 
     window.Squery = window.$ = Squery;
-})( window);
+})(window);

@@ -8,8 +8,7 @@ Squery.parseXML = function( data ) {
     // Support: IE9
     try {
         xml = ( new window.DOMParser() ).parseFromString( data, "text/xml" );
-    }
-    catch ( e ) {
+    } catch ( e ) {
         xml = undefined;
     }
 

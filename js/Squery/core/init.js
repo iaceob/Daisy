@@ -1,4 +1,5 @@
-(function( window, undefined ) {
+(function( window, Squery, undefined ) {
+    'use strict';
      // A central reference to the root Squery(document)
      var rootSquery,
 
@@ -11,7 +12,7 @@
     Squery.prototype.init=function(selector, context, root ){
         var elements;
         
-        // HANDLE: $(""), $(null), $(undefined), $(false)
+        // HANDLE: $(''), $(null), $(undefined), $(false)
         if (!selector) {
             return this;
         }
@@ -20,22 +21,23 @@
         // so migrate can support Squery.sub (gh-2101)
         root = root || rootSquery;
 
-        if(typeof selector=="string") {
+        if(typeof selector=='string') {
 
-            //发现不是 "<"开始，">"结尾 $('<p id="test">My <em>new</em> text</p>')这种的情况
+            //发现不是 '<'开始，'>'结尾 $('<p id='test'>My <em>new</em> text</p>')这种的情况
             //如果selector是html标签组成的话，直接match = [ null, selector, null ];而不用正则检查
-            if (selector[0] === "<" && selector[selector.length - 1] === ">" && selector.length >= 3) {
+            var match = (selector[0] === '<' && selector[selector.length - 1] === '>' && selector.length >= 3) ? [null, selector, null] : reg_quickExpr.exec(selector);
+            /*
+            if (selector[0] === '<' && selector[selector.length - 1] === '>' && selector.length >= 3) {
 
                 // Assume that strings that start and end with <> are HTML and skip the regex check
                 match = [null, selector, null];
-            }
-            else {
+            } else {
                 match = reg_quickExpr.exec(selector);
             }
+            */
 
             // Match html or make sure no context is specified for #id
             if (match && (match[1] || !context)) {
-
                 // HANDLE: $(html) -> $(array)
                 if (match[1]) {
                     context = context instanceof Squery ? context[0] : context;
@@ -44,10 +46,7 @@
                     // Intentionally let the error be thrown if parseHTML is not present
                     Squery.merge(this, Squery.parseHTML(match[1], context && context.nodeType ? context.ownerDocument || context : document, true));
 
-                    return this;
-                }
-                // HANDLE: $(#id)
-                else {
+                } else {
                     elements = document.getElementById(match[2]);
 
                     if (elements) {
@@ -55,30 +54,30 @@
                         this[0] = elements;
                         this.length = 1;
                     }
-                    return this;
                 }
+                return this;
             }
             // HANDLE: $(expr, $(...))
-            else if ( !context) {
+            return !context ? ( context || root ).find( selector ) : this.constructor( context ).find( selector );
+            /*
+            if ( !context) {
                 return ( context || root ).find( selector );
-
                 // HANDLE: $(expr, context)
                 // (which is just equivalent to: $(context).find(expr)
             }
-            else {
-                return this.constructor( context ).find( selector );
-            }
-        }
-        // HANDLE: $(DOMElement)
-        else if(selector.nodeType ){
-            elements=[selector];
+            return this.constructor( context ).find( selector );
+            */
         }
         // HANDLE: $(function)
         // Shortcut for document ready
-        else if(typeof selector == "Function" ){
+        if(typeof selector == 'Function' ){
             // Execute immediately if ready is not present
             return root.ready !== undefined ? root.ready( selector ) : selector( Squery );
         }
+        // HANDLE: $(DOMElement)
+        // else if(selector.nodeType ){
+            elements=[selector];
+        // }
 
         return this.setArray(elements);
     };
@@ -89,4 +88,4 @@
 
     // Initialize central reference
     rootSquery = Squery( document );
-})( window);
+})(window, Squery);
