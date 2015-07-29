@@ -10,9 +10,11 @@
 
         this.each(function(index,element){
             var $documentList=$(element);
-            $documentList.find("ul").prev(".title").click(function(){
-                $(this).closest("li").toggleClass("actived").end().next("ul").slideToggle();
-            })
+            $documentList.find(".title").click(function(){
+                $(this).filter("a").closest(".document-list").find("a.title").parent("li").removeClass("actived");
+                $(this).parent("li").toggleClass("actived").children("ul").slideToggle();
+            });
+
         })
     }
 })(window,jQuery);

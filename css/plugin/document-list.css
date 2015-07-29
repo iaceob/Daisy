@@ -50,4 +50,18 @@
     display: block;
     background-color: #ddd;
     box-shadow: 0px 1px 3px #999;
+    position: relative;
+}
+.document-list li.actived>a.title:after{
+    content: ">";
+    display: block;
+    position: absolute;
+    right: 6px;
+    top: 3px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    color: #333;
+    border-radius: 100%;
+    text-align: center;
 }
