@@ -10,6 +10,9 @@
     -webkit-appearance:none;
 }
 
+html,body{
+    min-height: 100%;
+}
 body {
     font-family:'Segoe UI Light',"Helvetica Neue", Helvetica, STHeiTi, sans-serif, "Microsoft YaHei","宋体","Segoe WP", "Segoe UI";
     font-size: 14px;
