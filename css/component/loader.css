@@ -2,9 +2,7 @@ body{
     background-color: #333;
 }
 
-
 /* Active Animation */
-
 @-webkit-keyframes loader {
     from {
         -webkit-transform: rotate(0deg);
@@ -34,6 +32,14 @@ body{
     height: 64px;
     position: relative;
     text-align: center;
+}
+.loader-wraper{
+    position: relative;
+}
+.loader-wraper .loader {
+    position: absolute;
+    left: 50%;
+    margin-left: -32px;
 }
 .loader:before {
     position: absolute;
