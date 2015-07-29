@@ -39,7 +39,7 @@
 }
 .document-list>li>h5.title{
     background-color: #999;
-    box-shadow: 1px 1px 3px #666;
+    box-shadow: 0px 1px 3px #666;
 }
 .document-list>li>ul>li>h5.title{
     background-color: #ccc;
@@ -49,5 +49,5 @@
     font-size: 14px;
     display: block;
     background-color: #ddd;
-    box-shadow: 1px 1px 3px #999;
+    box-shadow: 0px 1px 3px #999;
 }
