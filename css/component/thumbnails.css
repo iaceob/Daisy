@@ -1,8 +1,23 @@
 .thumbnails-list{
-    padding-left: 0;
-    list-style-type: none;
+     padding-left: 0;
+     list-style-type: none;
+    margin: 0;
+ }
+.thumbnails-list:before,
+.thumbnails-list:after{
+    content: ".";
+    display:table;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 .thumbnails-list.span-2 li{
-    width: 50%;
+    width: calc(50% - 5px);
     float: left;
+}
+.thumbnails-list.span-2 li:nth-child(2n+1){
+    margin-right: 10px;
+}
+.thumbnails-list li .thumbnail>img{
+    width: 100%;
 }
