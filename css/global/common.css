@@ -5,8 +5,13 @@
     font-style: normal;
 }
 
+* {
+    box-sizing: border-box;
+    -webkit-appearance:none;
+}
+
 body {
-    font-family:'Segoe UI Light', "Microsoft YaHei","宋体","Segoe WP", "Segoe UI Light", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+    font-family:'Segoe UI Light',"Helvetica Neue", Helvetica, STHeiTi, sans-serif, "Microsoft YaHei","宋体","Segoe WP", "Segoe UI";
     font-size: 14px;
     color: #333;
     background-color: #fff;
@@ -15,31 +20,10 @@ body {
     margin: 0;
 }
 
-* {
-    box-sizing: border-box;
-}
-body, a, button, input {
-    cursor: default !important;
+a{
+    text-decoration: none;
 }
 a:focus {
     outline: none;
 }
 
-.pull-left {
-    float: left;
-}
-.pull-right {
-    float: right;
-}
-
-.circle {
-    border-radius: 100%;
-}
-
-.display-block {
-    display: block !important;
-}
-
-.padding-base{
-    padding: 10px;
-}

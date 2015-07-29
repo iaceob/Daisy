@@ -1,0 +1,8 @@
+.thumbnails-list{
+    padding-left: 0;
+    list-style-type: none;
+}
+.thumbnails-list.span-2 li{
+    width: 50%;
+    float: left;
+}

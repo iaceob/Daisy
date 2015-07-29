@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title></title>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js"></script>
 
     <link rel="stylesheet" href="../../../css/global/common.css">
+    <link rel="stylesheet" href="../../../css/global/font-awesome.css">
 
     <link rel="stylesheet" href="../../../css/base/button.css">
     <link rel="stylesheet" href="../../../css/base/typography.css">
@@ -18,10 +18,21 @@
 </head>
 <body>
 <div class="page">
-    <div class="header">
-        <button class="button-icon circle border"><</button>
+    <div class="header splited">
+        <button class="button-icon circle border button-return"><span class="icon-arrow-left"></span></button>
         <img class="titlepic" src="../../../image/logo.jpg">
         <h1 class="title">Web Frame</h1>
+        <nav><ul><li class="actived"><a href="#">Home</a></li><li><a href="#">Document</a></li></ul></nav>
+        <div class="user-block">
+            <div class="user-info">
+                <h3>FirstName</h3>
+                <h4>LastName</h4>
+            </div>
+            <div class="user-avatar-box">
+                <img class="user-avatar" src="../../../image/avatar.png">
+            </div>
+            <button class="button-icon button-set gray"><span class="icon-cog"></span></button>
+        </div>
     </div>
 </div>
 </body>

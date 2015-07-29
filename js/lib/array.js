@@ -8,7 +8,6 @@ Array.prototype.clone = function(){
     return tmp;
 };
 
-
 Array.prototype.max = function () {
     return Math.max.apply({}, this);
 };

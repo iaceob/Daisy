@@ -1,35 +1,30 @@
-!(function(window,undefined){
+!(function(window,$,undefined){
     'use strict';
 
-    function Tab(domElement, options) {
-        Plugin.call(this,domElement,options);
-        var $this = this;
+    $.fn.tab=function(options){
+        var default_settings={
 
-        var tabNavList = domElement.querySelector(".tab-nav-list");
-        var tabBox = domElement.querySelector(".tab-box");
-        var tabPages = tabBox.querySelectorAll(".tab-page");
-        var tabNavLis = tabNavList.querySelectorAll("li");
+        };
 
-        for (var i = 0; i < tabNavLis.length; i++) {
-            var tabNavLi = tabNavLis[i];
+        var settings= $.extend(default_settings,options);
 
-            (function (i) {
-                tabNavLi.addEventListener("click", function () {
-                    tabNavList.querySelector(".actived").classList.remove("actived");
-                    this.classList.add("actived");
-                    var currentTabPage = tabBox.querySelector(".show");
-                    currentTabPage.classList.remove("show");
-                    currentTabPage.classList.add("hide");
+        this.each(function(index,element){
+            var $tab=$(element);
+            var $tabNavList =$tab.find(".tab-nav-list");
+            var $tabBox =$tab.find(".tab-box");
+            var $tabPages =$tabBox.find(".tab-page");
+            var $tabNavLis = $tab.find("li");
 
-                    var tabPage = document.getElementById(this.dataset["target"]) || tabPages[i];
-                    tabPage.classList.remove("hide");
-                    tabPage.classList.add("show");
-                });
-            })(i);
-        }
+            $tabNavLis.click(function(){
+                var $tabNavLi=$(this);
+                $tabNavLis.filter(".actived").removeClass("actived");
+                $tabNavLi.addClass("actived");
+
+                $tabPages.filter(".show").removeClass("show").addClass("hide");
+
+                var $toTabPage=this.dataset["target"]?$(document.getElementById(this.dataset["target"])):$tabPages.eq($tabNavLi.index());
+                $toTabPage.removeClass("hide").addClass("show");
+            })
+        })
     }
-    Tab.prototype=Plugin.prototype;
-    Tab.prototype.constructor = Tab;
-
-    window.Tab=Tab;
-})(window);
+})(window,jQuery);

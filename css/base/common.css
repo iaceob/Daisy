@@ -1,50 +1,65 @@
-@charset 'UTF-8';
-
-*,*:after,*:before {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Segoe WP', 'Segoe UI Light', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif', 'Microsoft YaHei';
-  font-size: 14px;
-  color: #333;
-  background-color: #fff;
-  line-height: 1;
-}
-*, body, a, button, input {
-  cursor: default !important;
-}
-img {
-  width: 100%;
-  height: auto;
-}
-a:focus {
-  outline: none;
-}
+/**
+ * Created by canknow on 2015/7/22.
+ */
 
 .pull-left {
-  float: left;
+    float: left;
 }
 .pull-right {
-  float: right;
+    float: right;
 }
+
 .circle {
-  border-radius: 100%;
+    border-radius: 100%;
 }
-/*
- * TODO: 建议优化 class 名称并且当前样式不建议使用 按照 CSS 书写规范书写
- */
-.display_block {
-  display: block !important;
-}
+
 .display-block {
-  display: block !important;
+    display: block !important;
 }
 
-.alert {
-  color: #ff0000;
+.padding-base{
+    padding: 10px;
 }
 
+.flex-box-horizional{
+    display: -webkit-box;
+    box-orient: horizional;
+}
+.flex-box-vertical{
+    display: -webkit-box;
+    box-orient: vertical;
+}
+.flex-adapter{
+    flex:1;
+    -webkit-box-flex:1;
+}
+.flex-1{
+    flex:1;
+}
+.flex-2{
+    flex:2;
+}
+.flex-3{
+    flex:3;
+}
+.flex-4{
+    flex:4;
+}
+.flex-5{
+    flex:5;
+}
+.flex-6{
+    flex:6;
+}
+.flex-7{
+    flex:7;
+}
+.flex-8{
+    flex:8;
+}
+.flex-9{
+    flex:9;
+}
+.flex-10{
+    flex:10;
+}

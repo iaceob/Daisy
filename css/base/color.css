@@ -108,6 +108,9 @@
 .bg-color-white {
     background-color: #ffffff !important;
 }
+.bg-color-gray {
+    background-color: #999999 !important;
+}
 .bg-color-grayDark {
     background-color: #525252 !important;
 }

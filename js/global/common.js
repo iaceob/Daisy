@@ -1,17 +1,17 @@
 (function(window, undefined){
     'use strict';
 
-    function StartControl(domElement) {
-        //control init
-        var controlDoms = domElement.querySelectorAll("[data-ride]");
+    function startPlugin(domElement) {
+        //plugin init
+        var pluginDoms = domElement.querySelectorAll("[data-ride]");
 
-        for (var i = 0; i < controlDoms.length; i++) {
-            var controlDom = controlDoms[i];
-            var controlNames = controlDom.dataset["ride"].trim().split(" ");
+        for (var i = 0; i < pluginDoms.length; i++) {
+            var pluginDom = pluginDoms[i];
+            var pluginNames = pluginDom.dataset["ride"].trim().split(" ");
 
-            controlNames.forEach(function(controlName){
-                if(!controlDom[controlName]){
-                    new window[controlName.replaceFirstUpper()](controlDom);
+            pluginNames.forEach(function(pluginName){
+                if(!pluginDom[pluginName]){
+                    $(pluginDom)[pluginName]();
                 }
             })
         }
@@ -25,10 +25,10 @@
             console.log(ex.message);
         }
 
-        StartControl(document.body);
+        startPlugin(document.body);
 
         document.addEventListener("DOMNodeInserted",function(e){
-            StartControl(e.target);
+            startPlugin(e.target);
         });
     });
 

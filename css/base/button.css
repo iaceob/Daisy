@@ -1,53 +1,123 @@
-
-@charset 'UTF-8';
-
 .button-text {
-  display: inline-block;
-  padding: 0 12px;
-  background-image: none;
-  background-color: #ddd;
-  border: 1px solid transparent;
-  height: 32px;
-  line-height: 30px;
-  color: #33333;
-  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    padding: 0 12px;
+    background-image: none;
+    background-color: #ddd;
+    border: 1px solid transparent;
+    height: 32px;
+    line-height: 30px;
+    color: #33333;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.button-text:hover{
+    outline:none;
+}
+.button-text:focus{
+    outline:none;
+}
+.button-text:active{
+    outline:none;
+    -webkit-transform:perspective(400px) rotateX(5deg);
+    transform-origin: 50% 100%;
+}
+.button-text.block{
+    display: block;
+    width: 100%;
 }
 .button-text.border {
-  background-color: transparent;
-  border-color: #000000;
-  color: #000000;
+    background-color: transparent;
+    border-color: #000000;
+    color: #000000;
 }
 .button-text.block {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 .button-icon {
-  padding: 0;
-  display: inline-block;
-  background-image: none;
-  background-color: transparent;
-  width: 32px;
-  height: 32px;
-  line-height: 30px;
-  color: #33333;
-  border: 1px solid transparent;
-  text-align: center;
+    padding: 0;
+    display: inline-block;
+    background-image: none;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    color: #999;
+    border: 1px solid transparent;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.button-icon.large{
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+    line-height: 46px;
+}
+.button-icon [class*=icon-]{
+
+}
+.button-icon.gray [class*=icon-]{
+    color:#999;
+}
+.button-icon:active,.button-icon:focus{
+    outline: none;
 }
 .button-icon.circle {
-  border-radius: 100%;
-  background-color: #dddddd;
+    border-radius: 100%;
+    background-color: #dddddd;
 }
 .button-icon.circle.border {
-  background-color: transparent;
-  border-color: #000000;
-  color: #000000;
+    background-color: transparent;
+    border-color: #000000;
+    color: #000000;
 }
 .button-icon.circle.border.light {
-  border-color: #ffffff;
-  color: #ffffff;
+    border-color: #ffffff;
+    color: #ffffff;
 }
 .button-icon.circle.border.gray {
-  border-color: #999999;
-  color: #999999;
+    border-color: #999999;
+    color: #999999;
+}
+
+.button-command{
+    position: relative;
+    padding-left: 48px;
+    outline: none;
+    border:none;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.button-command [class*=icon-]{
+    position: absolute;
+    left: 8px;
+    top:50%;
+    margin-top: -12px;
+    font-size: 24px;
+    line-height: 1;
+    color: #999;
+}
+.button-command p{
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.button-command small{
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.button-command.block {
+    display: block;
+    width: 100%;
+}
+.button-command:active{
+    outline:none;
+    -webkit-transform:perspective(400px) rotateX(5deg);
+    transform-origin: 50% 100%;
 }

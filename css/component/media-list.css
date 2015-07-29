@@ -1,0 +1,43 @@
+/**
+ * Created by canknow on 2015/7/23.
+ */
+
+.media-list{
+    padding-left: 0;
+    list-style-type: none;
+}
+.media-list .item{
+    display: -webkit-box;
+}
+.media-list .item .titlepic-box{
+
+}
+.media-list .item .titlepic{
+    border-radius: 100%;
+}
+.media-list .item .body{
+    -webkit-box-flex:1;
+    padding: 0 10px 10px 10px;
+}
+.media-list .item .body .title{
+    font-weight: bold;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+.media-list .item .body .title{
+    font-weight: bold;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+.media-list .item .body .meta {
+    color: #999;
+    margin-bottom: 10px;
+}
+.media-list .item .body .meta * {
+    margin-right: 3px;
+}
+.media-list .item .body .datetime{
+    font-size: 12px;
+    color:#999;
+    float: right;
+}

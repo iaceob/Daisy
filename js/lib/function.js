@@ -37,11 +37,11 @@ function extendValue(destination, source) {
     return destination;
 }
 
-function DecimalToColorArray(DecNum) {
+function decimalToColorArray(decNum) {
     var colorArray = [];
-    colorArray[0] = (Math.floor(DecNum / 65536)) / 256;
-    colorArray[1] = (Math.floor(DecNum % 65536 / 256)) / 256;
-    colorArray[2] = (DecNum % 256) / 256;
+    colorArray[0] = (Math.floor(decNum / 65536)) / 256;
+    colorArray[1] = (Math.floor(decNum % 65536 / 256)) / 256;
+    colorArray[2] = (decNum % 256) / 256;
     colorArray[3] = 1;
     return colorArray;
 }

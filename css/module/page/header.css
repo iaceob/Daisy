@@ -1,19 +1,89 @@
 .page .header {
-  padding: 16px 12px;
+    padding: 16px 12px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+}
+.page .header.splited{
+    box-shadow: 0px 1px 5px #ddd;
+}
+.page .header .button-return{
+    margin-right: 12px;
+    display: block;
 }
 .page .header .titlepic {
-  margin-right: 12px;
-  height: 32px;
-  vertical-align: middle;
+    margin-right: 12px;
+    height: 32px;
+    vertical-align: middle;
+    display: block;
 }
 .page .header .title {
-  margin: 0;
-  height: 32px;
-  line-height: 32px;
-  font-size: 18px;
-  display: inline-block;
-  vertical-align: middle;
+    margin: 0;
+    height: 32px;
+    line-height: 32px;
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
 }
 * + .page .header .title {
-  margin-left: 12px;
+    margin-left: 12px;
+}
+
+.page .header nav{
+    -webkit-box-flex:1; /* Safari 和 Chrome */
+    box-flex:1;
+    display: -webkit-box;
+    margin-left: 12px;
+}
+.page .header nav ul{
+    -wekbit-box-flex:1;
+    display: -webkit-box;
+    margin: 0;
+    padding-left: 0;
+}
+.page .header nav ul li{
+    list-style-type: none;
+    display: -webkit-box;
+    -webkit-box-align: center;
+}
+.page .header nav ul li a{
+    display: block;
+    padding:0 24px;
+    color:#666;
+    font-size:14px;
+}
+.page .header nav ul li a:hover{
+    color:#333;
+}
+.page .header nav ul li:active{
+    background-color: #ddd;
+    -webkit-transition: 0.5s;
+}
+.page .header nav ul li.actived a{
+    font-weight: bold;
+    color:#333;
+}
+
+.page .header .user-block{
+    display: -webkit-box;
+    -webkit-box-align:center;
+}
+.page .header .user-info{
+    margin-right: 10px;
+}
+.page .header .user-info h3{
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.page .header .user-info h4{
+    margin: 0 0 0 0;
+    font-size: 12px;
+}
+.page .header .user-avatar{
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+}
+.page .header .button-set{
+    margin-left: 10px;
 }

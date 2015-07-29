@@ -1,24 +1,24 @@
 /*tab*/
 .tab{
 }
-.tab>ul.tab-navs{
+.tab>ul.tab-nav-list{
     margin:0;
     padding: 0 5px;
     list-style-type:none;
     background-color:#eee;
 }
-.tab>ul.tab-navs:before{
+.tab>ul.tab-nav-list:before{
     display:table;
     content: "";
     line-height: 0;
 }
-.tab>ul.tab-navs:after{
+.tab>ul.tab-nav-list:after{
     display:table;
     clear:both;
     content: "";
     line-height: 0;
 }
-.tab>ul.tab-navs>li{
+.tab>ul.tab-nav-list>li{
     display:block;
     padding:6px 0;
     float:left;
@@ -27,28 +27,28 @@
     cursor:pointer;
     margin-left:10px;
 }
-.tab>ul.tab-navs>li:first-child{
+.tab>ul.tab-nav-list>li:first-child{
     margin-left:0;
 }
-.tab>ul.tab-navs>li.actived{
+.tab>ul.tab-nav-list>li.actived{
     color:#000;
 }
 .tab > .tab-box {
     position:relative;
     border:2px solid #eee;
 }
-.tab > .tab-box>.tab-item{
+.tab > .tab-box>.tab-page{
     padding:10px;
 }
-.tab > .tab-box>.tab-item.hide{
+.tab > .tab-box>.tab-page.hide{
     display:none !important;
 }
-.tab > .tab-box > .tab-item.show {
+.tab > .tab-box > .tab-page.show {
 }
 .tab.transparent> .tab-box{
     border:none;
 }
-.tab.transparent>ul.tab-navs{
+.tab.transparent>ul.tab-nav-list{
     background-color:transparent;
 }
 
@@ -60,12 +60,12 @@
 .tab.vertical-tab>.handle>button{
     display:block;
 }
-.tab.vertical-tab.right>.handle>ul.tab-navs{
+.tab.vertical-tab.right>.handle>ul.tab-nav-list{
     margin-bottom:0;
     padding:0;
     margin-right:2px;
 }
-.tab.vertical-tab>.handle>ul.tab-navs>li{
+.tab.vertical-tab>.handle>ul.tab-nav-list>li{
     -webkit-transition: 0.3s;
     float: none;
     margin:6px 0 0 0;
@@ -75,18 +75,18 @@
     line-height: 36px;
     display: block;
 }
-.tab.vertical-tab>.handle>ul.tab-navs>li>span{
+.tab.vertical-tab>.handle>ul.tab-nav-list>li>span{
     color:#fff;
     font-size:16px;
 }
-.tab.vertical-tab>.handle>ul.tab-navs>li:hover{
+.tab.vertical-tab>.handle>ul.tab-nav-list>li:hover{
     background-color:#ccc;
 }
-.tab.vertical-tab>.handle>ul.tab-navs>li.actived{
+.tab.vertical-tab>.handle>ul.tab-nav-list>li.actived{
     background-color:#fff;
 }
-.tab.vertical-tab>.handle>ul.tab-navs>li:hover>span,
-.tab.vertical-tab>.handle>ul.tab-navs>li.actived>span{
+.tab.vertical-tab>.handle>ul.tab-nav-list>li:hover>span,
+.tab.vertical-tab>.handle>ul.tab-nav-list>li.actived>span{
     color:#000;
 }
 .tab.vertical-tab > .tab-box {
@@ -99,7 +99,7 @@
     border-right:none;
     overflow:hidden;
 }
-.tab.vertical-tab > .tab-box>.tab-item{
+.tab.vertical-tab > .tab-box>.tab-page{
     padding: 10px;
     border:none;
 }

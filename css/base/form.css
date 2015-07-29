@@ -4,6 +4,10 @@ input {
     border: 1px solid #ddd;
     padding: 0 12px;
 }
+input:focus{
+    border-color:#666;
+    outline: none;
+}
 form .form-control-key {
     display: block;
     margin-bottom: 12px;
@@ -64,6 +68,12 @@ form .form-control-block {
     position: absolute;
     right: 0;
     top: 0;
+}
+.input-wrapper > .form-control-block-icon.left{
+    left: 0;
+}
+.input-wrapper > .form-control-block-icon.left+input{
+    padding-left:32px;
 }
 .input-wrapper>button{
     display: block;

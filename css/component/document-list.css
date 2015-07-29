@@ -1,0 +1,53 @@
+.document-list{
+    margin-top: 0;
+}
+.document-list,.document-list ul{
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.document-list li{
+    list-style-type: none;
+}
+.document-list li .title{
+    padding: 8px 6px;
+}
+.document-list li>h5.title{
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+    color:#fff;
+    cursor: pointer;
+    position: relative;
+    padding: 12px;
+}
+.document-list li>h5.title:after{
+    content: "-";
+    display: block;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 100%;
+    text-align: center;
+}
+.document-list li.actived>h5.title:after{
+    content: "+";
+}
+.document-list>li>h5.title{
+    background-color: #999;
+    box-shadow: 1px 1px 3px #666;
+}
+.document-list>li>ul>li>h5.title{
+    background-color: #ccc;
+}
+.document-list li a.title{
+    color: #333;
+    font-size: 14px;
+    display: block;
+    background-color: #ddd;
+    box-shadow: 1px 1px 3px #999;
+}
