@@ -1,0 +1,39 @@
+.login .banner-box{
+
+}
+.login .banner{
+    width: 100%;
+    display: block;
+}
+.login .title{
+    text-align: center;
+    margin: 0;
+    padding: 20px 10px;
+    background-color: #E38664;
+    color:#fff;
+}
+.login .form{
+    background-color: #7C615A;
+    padding: 30px 10px 0 10px;
+}
+.login .input-wrapper{
+    margin-bottom: 20px;
+    border-radius: 32px;
+    overflow: hidden;
+}
+.login .input-wrapper .form-control-block-icon{
+    color: #83665E;
+}
+.login .input-wrapper input{
+    border-color:transparent;
+    background-color:#6A5550;
+    color: #fff;
+}
+.login .input-wrapper input:focus{
+    border-color:transparent;
+}
+
+.button-secondary{
+    background-color:#69544F;
+    color:#fff;
+}

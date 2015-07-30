@@ -67,16 +67,21 @@
 .withpoint{
     position: relative;
 }
-.withpoint:after{
-    content:">";
+.withpoint:after {
+    content: ">";
     width: 24px;
     height: 24px;
     display: block;
     border-radius: 100%;
-    text-align:center;
-    line-height: 24px;
-    position: absolute;
-    top:50%;
-    margin-top: -12px;
-    right: 10px;
+}
+
+.blur {
+    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+
+    -webkit-filter: blur(10px); /* Chrome, Opera */
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
 }

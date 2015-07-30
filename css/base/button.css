@@ -11,6 +11,7 @@
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
     cursor: pointer;
+    text-align: center;
 }
 .button-text:hover{
     outline:none;
@@ -35,6 +36,11 @@
 .button-text.block {
     display: block;
     width: 100%;
+}
+
+.button-text.large{
+    height: 48px;
+    line-height: 46px;
 }
 
 .button-icon {
