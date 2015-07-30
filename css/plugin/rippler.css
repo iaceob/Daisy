@@ -1,0 +1,13 @@
+.rippler{
+    position: relative;
+    overflow: hidden;
+}
+.rippler .rippler-pointer{
+    content:"";
+    display:block;
+    background-color:rgba(255,255,255,0.5);
+    position: absolute;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+}

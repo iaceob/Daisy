@@ -2,7 +2,7 @@
     padding: 10px;
     box-shadow: 1px 1px 3px #ddd;
     position: relative;
-    padding-left: 48px;
+    padding-left: 52px;
 }
 .notify .icon{
     position: absolute;
@@ -21,7 +21,7 @@
 .notify .title{
     margin: 0 0 10px 0;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     color:#333;
 }
 .notify .body .content{

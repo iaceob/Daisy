@@ -8,6 +8,13 @@
 }
 .media-list .item{
     display: -webkit-box;
+    padding: 10px;
+}
+.media-list .item:hover{
+    background-color: #eee;
+}
+.media-list.border .item{
+    border-bottom: 1px solid #ddd;
 }
 .media-list .item .titlepic-box{
 

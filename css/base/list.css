@@ -24,4 +24,9 @@ ul.unstyled, ol.unstyled, .unstyled {
     text-align: center;
     width: 16px;
     display: inline-block;
+    line-height: 16px;
+    height: 16px;
+    margin-right: 6px;
+    display: inline-block;
+    font-style: italic;
 }
