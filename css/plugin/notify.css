@@ -1,4 +1,11 @@
+.notify-box{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 50%;
+}
 .notify{
+    width: 100%;
     padding: 10px;
     box-shadow: 1px 1px 3px #ddd;
     position: relative;

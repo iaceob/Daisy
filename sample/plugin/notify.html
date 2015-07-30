@@ -21,23 +21,16 @@
     <script src="../../js/lib/string.js"></script>
     <script src="../../js/lib/function.js"></script>
     <script src="../../js/global/common.js"></script>
-    <script src="../../js/plugin/prettify.js"></script>
     <script src="../../js/plugin/notify.js"></script>
 </head>
 <body>
-<div class="notify">
-    <span class="icon icon-info"></span>
-    <h5 class="title">notify title</h5>
-    <div class="body">
-        <p class="content">notify content</p>
-    </div>
-</div>
-<div class="notify">
-    <span class="icon icon-info"></span>
-    <h5 class="title">notify title</h5>
-    <div class="body">
-        <p class="content">notify content</p>
-    </div>
-</div>
+<button class="button-text" id="button_create_notify">create a notify</button>
+<script>
+    $(function(){
+        $("#button_create_notify").click(function(){
+            $.notify("hello!");
+        })
+    })
+</script>
 </body>
 </html>
