@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Dialog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .dialog {
+            position: fixed;
+            top: 150px;
+            left: 50%;
+            width: 300px;
+            margin-left: -150px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 25px #888;
+            border-radius: 5px;
+            padding: 2px;
+            display: none;
+        }
+        .dialog .close {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            margin: 0;
+            padding: 0;
+            height: 15px;
+            width: 15px;
+            text-align: center;
+            cursor: default;
+            line-height: 98%;
+            background: #ccc;
+            opacity: .5;
+            border-radius: 10px;
+        }
+        .dialog .close:hover {
+            background: #333;
+        }
+        .dialog .close:before {
+            content: ''
+        }
+        .dialog .header {
+            position: relative;
+            height: 10%;
+            border-bottom: 1px solid #ccc;
+        }
+        .dialog .header .title {
+            font-size: 120%;
+            font-weight: bold;
+        }
+        .dialog .footer {
+            position: relative;
+            height: 10%;
+            border-top: 1px dotted #ccc;
+        }
+        .dialog .container {
+            margin-top: 2px;
+            margin-bottom: 2px;
+            min-height: 200px;
+            height: auto !important;
+        }
+        .dialog.show {
+            display: block;
+        }
+        .dialog.hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <button class="btn btn-dialog-show">Show</button>
+    <button class="btn btn-dialog-hide">Hide</button>
+</div>
+
+<div class="dialog" data-role="dialog">
+    <div class="header">
+        <div class="title">Dialog title</div>
+    </div>
+    <div class="container">Dialog container</div>
+    <div class="footer">Dialog footer</div>
+    <div class="close">&times;</div>
+</div>
+
+<script src="../../js/lib/jquery/jquery-2.1.1.js"></script>
+<script src="../../js/plugin/dialog.js"></script>
+<script>
+$(document).ready(function(){
+    $('.btn-dialog-show').bind('click', function(){
+        $('.dialog').dialog({
+            title: 'test title',
+            content: 'test content',
+            footer: 'test footer'
+        }).show();
+        return false;
+    });
+    $('.btn-dialog-hide').bind('click', function(){
+        $('.dialog').dialog().hide();
+        return false;
+    });
+});
+</script>
+</body>
+</html>
